@@ -1463,5 +1463,22 @@
    "site_name": null,
    "image": "http://fonts.ninja/images/social.png"
   }
+ },
+ {
+  "id": "3f3b85d8fa",
+  "url": "https://html.to.design/home/",
+  "name": "HTML to Design",
+  "folder": "Tools",
+  "site": "html.to.design",
+  "image": "img/3f3b85d8fa.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T05:07:06+00:00",
+  "source": {
+   "final_url": "https://html.to.design/home/",
+   "title": "html.to.design — Convert any website into fully editable Figma designs",
+   "description": "html.to.design—Convert any website into fully editable Figma files",
+   "site_name": "html.to.design — Convert any website into fully editable Figma designs",
+   "image": "https://html.to.design/img/meta/h2d-banner.jpg"
+  }
  }
 ]
