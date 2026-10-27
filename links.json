@@ -428,7 +428,7 @@
   "id": "c4a40f0fb5",
   "url": "https://loading.dev/",
   "name": "loading.dev",
-  "folder": "Dev tools",
+  "folder": "UI kits",
   "site": "loading.dev",
   "image": "img/c4a40f0fb5.webp",
   "image_kind": "preview",
@@ -628,6 +628,482 @@
    "description": null,
    "site_name": null,
    "image": null
+  }
+ },
+ {
+  "id": "fac2a6bf02",
+  "url": "https://gianlucaboccia.me/",
+  "name": "Gianluca Boccia",
+  "folder": "Portfolios",
+  "site": "gianlucaboccia.me",
+  "image": "img/fac2a6bf02.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:54:46+00:00",
+  "source": {
+   "final_url": "https://www.gianlucaboccia.me/",
+   "title": "Gianluca Boccia — UI Designer & Design Systems",
+   "description": "Senior UI Designer at Candid, based in New Jersey. Explore my work in interfaces, design systems and digital products through a story in one line.",
+   "site_name": "Gianluca Boccia",
+   "image": "https://www.gianlucaboccia.me/assets/identity/portfolio-social-58.png"
+  }
+ },
+ {
+  "id": "ae5c889eb6",
+  "url": "https://mary-huang.com/index.html",
+  "name": "Mary Huang",
+  "folder": "Portfolios",
+  "site": "mary-huang.com",
+  "image": "img/ae5c889eb6.webp",
+  "image_kind": "screenshot",
+  "added": "2026-10-27T01:54:56+00:00",
+  "source": {
+   "final_url": "https://mary-huang.com/index.html",
+   "title": "Mary Huang : Portfolio",
+   "description": "Mary Huang designs and builds 0 → 1 interfaces for new kinds of technology. Currently building Personal Personal Computing and Kodolab.",
+   "site_name": null,
+   "image": null
+  }
+ },
+ {
+  "id": "2315639c18",
+  "url": "https://webdesign.kernjosh.com/",
+  "name": "Josh Kern",
+  "folder": "Portfolios",
+  "site": "webdesign.kernjosh.com",
+  "image": "img/2315639c18.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:54:57+00:00",
+  "source": {
+   "final_url": "https://webdesign.kernjosh.com/",
+   "title": "Josh Kern",
+   "description": "Josh Kern - webdesign and dev. Some work, info, and how to get in touch.",
+   "site_name": "Josh Kern",
+   "image": "https://webdesign.kernjosh.com/og.png"
+  }
+ },
+ {
+  "id": "0eb5bedd55",
+  "url": "https://designthefuture.world/",
+  "name": "Design the Future",
+  "folder": "Portfolios",
+  "site": "designthefuture.world",
+  "image": "img/0eb5bedd55.webp",
+  "image_kind": "screenshot",
+  "added": "2026-10-27T01:55:10+00:00",
+  "source": {
+   "final_url": "https://designthefuture.world/",
+   "title": "Design the Future",
+   "description": "Justin is designing for the future of the world.",
+   "site_name": null,
+   "image": null
+  }
+ },
+ {
+  "id": "23d47dcfb3",
+  "url": "https://floredecrombrugghe.com/",
+  "name": "Flore de Crombrugghe",
+  "folder": "Portfolios",
+  "site": "floredecrombrugghe.com",
+  "image": "img/23d47dcfb3.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:55:10+00:00",
+  "source": {
+   "final_url": "https://floredecrombrugghe.com/",
+   "title": "Flore de Crombrugghe, Senior Product Designer",
+   "description": "An illustrated map of my work: consumer apps and internal tools for high-stakes, large-scale services.",
+   "site_name": "Flore de Crombrugghe",
+   "image": "https://floredecrombrugghe.com/images/link-previews/home.png"
+  }
+ },
+ {
+  "id": "b3c143cb07",
+  "url": "https://gordontu.com/about",
+  "name": "Gordon Tu",
+  "folder": "Portfolios",
+  "site": "gordontu.com",
+  "image": "img/b3c143cb07.webp",
+  "image_kind": "screenshot",
+  "added": "2026-10-27T01:55:20+00:00",
+  "source": {
+   "final_url": "https://gordontu.com/about",
+   "title": "About — Gordon Tu",
+   "description": "About Gordon Tu, a design engineer and cartographer in the Bay Area who makes interactive maps, data visualization and generative art with AI.",
+   "site_name": "Gordon Tu",
+   "image": null
+  }
+ },
+ {
+  "id": "4ecdf4bf34",
+  "url": "https://feltron.com/index.html",
+  "name": "Feltron",
+  "folder": "Portfolios",
+  "site": "feltron.com",
+  "image": "img/4ecdf4bf34.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:55:21+00:00",
+  "source": {
+   "final_url": "https://feltron.com/index.html",
+   "title": "Feltron",
+   "description": "Information designer Nicholas Felton. Author of the Feltron Annual Reports, co-creator of Reporter and Daytum, Facebook timeline designer.",
+   "site_name": null,
+   "image": "https://feltron.com/images/TwitterCard.jpg"
+  }
+ },
+ {
+  "id": "e497401923",
+  "url": "https://joffreyspitzer.com/",
+  "name": "Joffrey Spitzer",
+  "folder": "Portfolios",
+  "site": "joffreyspitzer.com",
+  "image": "img/e497401923.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:55:23+00:00",
+  "source": {
+   "final_url": "https://joffreyspitzer.com/",
+   "title": "Joffrey Spitzer | Creative Front-end Developer",
+   "description": "I’m Joffrey Spitzer, a Creative Developer based in Strasbourg, France.",
+   "site_name": null,
+   "image": "https://joffreyspitzer.com/og.png"
+  }
+ },
+ {
+  "id": "ba2e8429f8",
+  "url": "https://mikematas.com/",
+  "name": "Mike Matas",
+  "folder": "Portfolios",
+  "site": "mikematas.com",
+  "image": "img/ba2e8429f8.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:55:24+00:00",
+  "source": {
+   "final_url": "https://mikematas.com/",
+   "title": "Mike Matas",
+   "description": "Mike Matas is an entrepreneur and interface designer based in Healdsburg, California. His work can be seen in products from Apple, Nest, Facebook, Microsoft, and his startups Delicious Library, Push Pop Press and Lobe. He is currently working on some new projects with LoveFrom. Outside of design, Mike is a passionate photographer, gardener, husband and dad.",
+   "site_name": null,
+   "image": "https://s3.us-west-2.amazonaws.com/media.zkz.dev/og.jpg"
+  }
+ },
+ {
+  "id": "0350a1b275",
+  "url": "https://www.leoparpeix.com/",
+  "name": "Léo Parpeix",
+  "folder": "Portfolios",
+  "site": "leoparpeix.com",
+  "image": "img/0350a1b275.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:55:25+00:00",
+  "source": {
+   "final_url": "https://www.leoparpeix.com/",
+   "title": "Léo Parpeix — Art director & Interactive Designer",
+   "description": "French Art Director & Interactive Designer. I create impactful websites using a mix of typography, clean, layouts, animation and 3D elements.",
+   "site_name": "Léo Parpeix",
+   "image": "https://leoparpeix.com/preview.jpg"
+  }
+ },
+ {
+  "id": "9709de9a81",
+  "url": "https://rhymeandreason.studio/",
+  "name": "Rhyme & Reason",
+  "folder": "Portfolios",
+  "site": "rhymeandreason.studio",
+  "image": "img/9709de9a81.webp",
+  "image_kind": "screenshot",
+  "added": "2026-10-27T01:55:42+00:00",
+  "source": {
+   "final_url": "https://rhymeandreason.studio/",
+   "title": "Rhyme & Reason - lab and studio",
+   "description": null,
+   "site_name": null,
+   "image": null
+  }
+ },
+ {
+  "id": "a80e98ed4a",
+  "url": "https://bulbs.simondupety.com/",
+  "name": "Simon Dupety",
+  "folder": "Portfolios",
+  "site": "bulbs.simondupety.com",
+  "image": "img/a80e98ed4a.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:55:43+00:00",
+  "source": {
+   "final_url": "https://bulbs.simondupety.com/",
+   "title": "Bulbs by Simon Dupety",
+   "description": "Sculptural glass lighting by Simon Dupety.",
+   "site_name": null,
+   "image": "https://bulbs.simondupety.com/_astro/meta.B4HfLbGy.png"
+  }
+ },
+ {
+  "id": "a84ddf1042",
+  "url": "https://www.originkit.dev/sections",
+  "name": "Originkit",
+  "folder": "UI kits",
+  "site": "originkit.dev",
+  "image": "img/a84ddf1042.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:55:44+00:00",
+  "source": {
+   "final_url": "https://www.originkit.dev/sections",
+   "title": "Sections · Originkit",
+   "description": "Browse free React and Framer sections from Originkit — full-page blocks composed from animated components.",
+   "site_name": null,
+   "image": "https://www.originkit.dev/og-image.png?v=4"
+  }
+ },
+ {
+  "id": "f971f5da5e",
+  "url": "https://motion-primitives.com/",
+  "name": "Motion Primitives",
+  "folder": "UI kits",
+  "site": "motion-primitives.com",
+  "image": "img/f971f5da5e.webp",
+  "image_kind": "screenshot",
+  "added": "2026-10-27T01:55:54+00:00",
+  "source": {
+   "final_url": "https://motion-primitives.com/",
+   "title": "Motion-Primitives - UI kit to make beautiful, animated interfaces, faster.",
+   "description": "Motion-Primitives is an open-source UI kit to make beautiful, animated interfaces, faster. Built for React, Next.js, and Tailwind CSS.",
+   "site_name": null,
+   "image": "http://localhost:3000/opengraph-image.jpg?9ca9b9247d6d0fe4"
+  }
+ },
+ {
+  "id": "eb6f1b6046",
+  "url": "https://ui.halaska.com/",
+  "name": "Halaska UI",
+  "folder": "UI kits",
+  "site": "ui.halaska.com",
+  "image": "img/eb6f1b6046.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:55:55+00:00",
+  "source": {
+   "final_url": "https://ui.halaska.com/",
+   "title": "Halaska UI: a UI kit for AI products",
+   "description": "A single-file React UI kit for AI products, built on shadcn/ui. Screens, AI UX patterns and components for founders building with coding agents.",
+   "site_name": "Halaska UI",
+   "image": "https://ui.halaska.com/og.png"
+  }
+ },
+ {
+  "id": "dcc75036ef",
+  "url": "https://componentry.dev/",
+  "name": "Componentry",
+  "folder": "UI kits",
+  "site": "componentry.dev",
+  "image": "img/dcc75036ef.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:55:56+00:00",
+  "source": {
+   "final_url": "https://componentry.dev/",
+   "title": "Componentry — Beautiful Animated UI Components for React",
+   "description": "Beautiful, animated React UI components with styling and motion already handled. Built with Tailwind CSS, TypeScript, and Framer Motion.",
+   "site_name": "Componentry",
+   "image": "https://componentry.dev/opengraph-image.png"
+  }
+ },
+ {
+  "id": "c3cd4b4cdb",
+  "url": "https://playwright.dev/",
+  "name": "Playwright",
+  "folder": "Dev tools",
+  "site": "playwright.dev",
+  "image": "img/c3cd4b4cdb.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:56:04+00:00",
+  "source": {
+   "final_url": "https://playwright.dev/",
+   "title": "Fast and reliable end-to-end testing for modern web apps | Playwright",
+   "description": "Web automation and testing for apps, scripts, and AI agents",
+   "site_name": null,
+   "image": "https://repository-images.githubusercontent.com/221981891/8c5c6942-c91f-4df1-825f-4cf474056bd7"
+  }
+ },
+ {
+  "id": "5c01101fa0",
+  "url": "https://motion.dev/",
+  "name": "Motion",
+  "folder": "Dev tools",
+  "site": "motion.dev",
+  "image": "img/5c01101fa0.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:56:05+00:00",
+  "source": {
+   "final_url": "https://motion.dev/",
+   "title": "Motion (prev Framer Motion): JavaScript & React animation library",
+   "description": "Motion (prev Framer Motion) is a fast, production-grade animation library for React, JavaScript and Vue. Build smooth UI animations at a tiny footprint.",
+   "site_name": "Motion",
+   "image": "https://motion.dev/brand-lab/home-og.png"
+  }
+ },
+ {
+  "id": "56b7dbdc0f",
+  "url": "https://brik.space/Home",
+  "name": "Brik",
+  "folder": "Companies",
+  "site": "brik.space",
+  "image": "img/56b7dbdc0f.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:56:07+00:00",
+  "source": {
+   "final_url": "https://brik.space/",
+   "title": "AI Design Tools Platform - Build, Design, Share | Brik",
+   "description": "Brief Brik and it builds a design tool made for your idea - controls and all. Animation, 3D, type, interactive. Design through it, then share the tool.",
+   "site_name": "Brik",
+   "image": "https://brik.space/images/og/og-home.jpg"
+  }
+ },
+ {
+  "id": "efcd3cb627",
+  "url": "https://shots.so/",
+  "name": "Shots",
+  "folder": "Companies",
+  "site": "shots.so",
+  "image": "img/efcd3cb627.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:56:08+00:00",
+  "source": {
+   "final_url": "https://shots.so/",
+   "title": "Create Amazing Mockups",
+   "description": "Create Amazing Mockups",
+   "site_name": "Shots",
+   "image": "https://shots.so/image/og-new.jpg?v=2"
+  }
+ },
+ {
+  "id": "eacf63003f",
+  "url": "https://pencil.dev/",
+  "name": "Pencil",
+  "folder": "Companies",
+  "site": "pencil.dev",
+  "image": "img/eacf63003f.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:56:09+00:00",
+  "source": {
+   "final_url": "https://www.pen.dev/",
+   "title": "pen.dev",
+   "description": "An agentic canvas for building bold software.",
+   "site_name": "pen.dev",
+   "image": "https://pen.dev/assets/marketing/a4ecda6/assets/og-image.png"
+  }
+ },
+ {
+  "id": "286bdb389f",
+  "url": "https://www.awwwards.com/",
+  "name": "Awwwards",
+  "folder": "Inspiration",
+  "site": "awwwards.com",
+  "image": "img/286bdb389f.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:56:12+00:00",
+  "source": {
+   "final_url": "https://www.awwwards.com/",
+   "title": "Awwwards - Website Awards - Best Web Design Trends",
+   "description": "Awwwards are the Website Awards that recognize and promote the talent and effort of the best developers, designers and web agencies in the world.",
+   "site_name": "Awwwards",
+   "image": "https://assets.awwwards.com/assets/images/pages/about-certificates/awwwards.jpg"
+  }
+ },
+ {
+  "id": "b56c410728",
+  "url": "https://www.producthunt.com/",
+  "name": "Product Hunt",
+  "folder": "Inspiration",
+  "site": "producthunt.com",
+  "image": "img/b56c410728.webp",
+  "image_kind": "screenshot",
+  "added": "2026-10-27T01:56:30+00:00",
+  "source": {
+   "final_url": "https://www.producthunt.com/",
+   "title": "Just a moment...",
+   "description": null,
+   "site_name": null,
+   "image": null
+  }
+ },
+ {
+  "id": "414dd1ad37",
+  "url": "https://www.nngroup.com/articles/ux-context-design/",
+  "name": "UX-context design",
+  "folder": "Articles",
+  "site": "nngroup.com",
+  "image": "img/414dd1ad37.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:56:31+00:00",
+  "source": {
+   "final_url": "https://www.nngroup.com/articles/ux-context-design/",
+   "title": "UX-Context Design: Using UX Knowledge to Inform AI-Generated Design",
+   "description": "As more interface work is AI-generated, the output of research and design shifts from documents written for humans to curated context that guides AI.",
+   "site_name": "Nielsen Norman Group",
+   "image": "https://media.nngroup.com/media/articles/opengraph_images/UX_Context_Design_1.png"
+  }
+ },
+ {
+  "id": "25b63cfdc4",
+  "url": "https://designerfund.substack.com/p/ai-design-shopify",
+  "name": "Growing as a designer",
+  "folder": "Articles",
+  "site": "designerfund.substack.com",
+  "image": "img/25b63cfdc4.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:56:32+00:00",
+  "source": {
+   "final_url": "https://designerfund.substack.com/p/ai-design-shopify",
+   "title": "How to grow as a designer when AI is changing everything: Inside design at Shopify",
+   "description": "The case for design apprenticeships, the bar for design hires at Shopify, and why you should just try things.",
+   "site_name": null,
+   "image": "https://substackcdn.com/image/youtube/w_728,c_limit/mGgtSqxnhEA"
+  }
+ },
+ {
+  "id": "274c3e0b78",
+  "url": "https://www.nngroup.com/articles/product-ux-glossary/",
+  "name": "UX glossary",
+  "folder": "Guides",
+  "site": "nngroup.com",
+  "image": "img/274c3e0b78.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:56:34+00:00",
+  "source": {
+   "final_url": "https://www.nngroup.com/articles/product-ux-glossary/",
+   "title": "Product & UX Glossary",
+   "description": "Use this glossary to quickly clarify key terms and concepts related to product management and UX.",
+   "site_name": "Nielsen Norman Group",
+   "image": "https://media.nngroup.com/media/articles/opengraph_images/Social-Card-Product-UX-Glossary_opengraph.jpg"
+  }
+ },
+ {
+  "id": "006909d9cd",
+  "url": "https://lawsofux.com/fittss-law/",
+  "name": "Laws of UX",
+  "folder": "Guides",
+  "site": "lawsofux.com",
+  "image": "img/006909d9cd.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:56:35+00:00",
+  "source": {
+   "final_url": "https://lawsofux.com/fittss-law/",
+   "title": "Fitts’s Law | Laws of UX",
+   "description": "The time to acquire a target is a function of the distance to and size of the target.",
+   "site_name": "Laws of UX",
+   "image": "https://lawsofux.com/fittss-law/social.png"
+  }
+ },
+ {
+  "id": "91cdadf5c4",
+  "url": "https://flexboxfroggy.com/",
+  "name": "Flexbox Froggy",
+  "folder": "Guides",
+  "site": "flexboxfroggy.com",
+  "image": "img/91cdadf5c4.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:56:37+00:00",
+  "source": {
+   "final_url": "https://flexboxfroggy.com/",
+   "title": "Flexbox Froggy",
+   "description": "A game for learning CSS flexbox",
+   "site_name": null,
+   "image": "https://flexboxfroggy.com/images/screenshot.png"
   }
  }
 ]

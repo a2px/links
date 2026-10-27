@@ -30,6 +30,7 @@ DEFAULT_FOLDERS = [
     "Colors",
     "Textures",
     "Logos",
+    "UI kits",
     "Companies",
     "Landing pages",
     "Guides",
@@ -259,7 +260,7 @@ def classify(url, meta, folders, hint=None):
             "Prefer an existing folder. Create a new short plural folder name (1-2 words, sentence case) only if none fits.\n"
             "Portfolios = an individual's personal or portfolio site. Companies = a company or product homepage.\n"
             "Articles = blog posts and essays. Videos = YouTube/TikTok/Vimeo. Notes = shared notes documents.\n"
-            "Inspiration = galleries of design references. Dev tools = developer libraries and frameworks.\n"
+            "Inspiration = galleries of design references. Dev tools = developer libraries and frameworks. UI kits = ready-made UI components and sections.\n"
             "Also give a short display name (1-3 words, e.g. the person's name or the product's name).\n"
             + (f"The user wrote this alongside the link: {hint!r}. If it names a folder, use it.\n" if hint else "")
             + f"URL: {url}\nTitle: {meta.get('title')}\nDescription: {meta.get('description')}\n"
