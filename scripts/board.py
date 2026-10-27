@@ -28,8 +28,6 @@ DEFAULT_FOLDERS = [
     "Portfolios",
     "Studios",
     "Fonts",
-    "Colors",
-    "Textures",
     "Logos",
     "UI kits",
     "Mockups",
@@ -44,13 +42,13 @@ DEFAULT_FOLDERS = [
     "Dev tools",
     "Analytics",
     "Documentation",
-    "Other",
+    "Accessibility",
+    "Tools",
 ]
 
 KEYWORD_FOLDERS = [
     ("Fonts", ["font", "typeface", "type foundry", "typography", "lettering"]),
-    ("Colors", ["color", "colour", "palette", "gradient"]),
-    ("Textures", ["texture", "grain", "pattern"]),
+    ("Accessibility", ["accessib", "a11y", "wcag", "contrast checker"]),
     ("Logos", ["logo", "trademark", "symbol", "brand mark"]),
     ("Portfolios", ["portfolio", "designer", "my work", "case stud", "framer.website"]),
     ("Guides", ["guide", "how to", "tutorial", "templates", "tips"]),
@@ -294,7 +292,7 @@ def _keyword_folder(text):
     for folder, words in KEYWORD_FOLDERS:
         if any(w in text for w in words):
             return folder
-    return "Other"
+    return "Tools"
 
 
 def _plugin_classifier():
