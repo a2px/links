@@ -1293,5 +1293,22 @@
    "site_name": "Sentry",
    "image": "https://sentry.io/_astro/home-hero-meta.DJDejDMD.webp"
   }
+ },
+ {
+  "id": "38d8210a99",
+  "url": "https://www.typewolf.com/",
+  "name": "Typewolf",
+  "folder": "Fonts",
+  "site": "typewolf.com",
+  "image": "img/38d8210a99.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T03:19:17+00:00",
+  "source": {
+   "final_url": "https://www.typewolf.com/",
+   "title": "What’s Trending in Type\n · Typewolf",
+   "description": "Typewolf helps designers choose the perfect font combination for their next design project—features web fonts in the wild, font recommendations and learning resources.",
+   "site_name": "Typewolf",
+   "image": "https://www.typewolf.com/assets/img/typewolf-og.png"
+  }
  }
 ]
