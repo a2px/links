@@ -134,6 +134,13 @@ def _parse_page(page, final_url):
     }
 
 
+BLOCK_TITLES = re.compile(r"^(just a moment|attention required|access denied|forbidden|403|security check|are you a robot|verify you are human)", re.I)
+
+
+def is_block_page(meta):
+    return bool(meta.get("title") and BLOCK_TITLES.match(meta["title"].strip()))
+
+
 def _oembed(url):
     endpoint = next((e for d, e in OEMBED.items() if site_of(url) == d or site_of(url).endswith("." + d)), None)
     if not endpoint:
@@ -189,6 +196,9 @@ def fetch_metadata(url):
             if meta is None:
                 raise
             print(f"  browser fetch failed ({e})")
+    if is_block_page(meta):
+        # The site refused automated visitors; keep only what the address tells us.
+        meta = {"final_url": url, "title": None, "description": None, "site_name": None, "image": None, "blocked": True}
     embed = _oembed(meta["final_url"])
     if embed.get("title"):
         meta["title"] = embed["title"]
@@ -221,8 +231,33 @@ def screenshot(url):
         page.goto(url, wait_until="domcontentloaded", timeout=45000)
         page.wait_for_timeout(5000)
         png = page.screenshot()
+        title = page.title()
         browser.close()
-    return Image.open(io.BytesIO(png))
+    return Image.open(io.BytesIO(png)), title
+
+
+def name_tile(text):
+    """A plain tile with the site's name, for sites that refuse to be previewed."""
+    from PIL import ImageDraw, ImageFont
+
+    palette = [("#1d1d1f", "#ffffff"), ("#e8e4dc", "#1d1d1f"), ("#dfe7f0", "#1d1d1f"), ("#efe1e6", "#1d1d1f"), ("#e3eadf", "#1d1d1f")]
+    bg, fg = palette[int(hashlib.sha1(text.encode()).hexdigest(), 16) % len(palette)]
+    img = Image.new("RGB", (TILE_PX, TILE_PX), bg)
+    draw = ImageDraw.Draw(img)
+    label = text.split(".")[0] if text.count(".") <= 2 else text
+    font = None
+    for path in ("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"):
+        if os.path.exists(path):
+            size = 110
+            while size > 30:
+                font = ImageFont.truetype(path, size)
+                if draw.textlength(label, font=font) <= TILE_PX * 0.8:
+                    break
+                size -= 6
+            break
+    font = font or ImageFont.load_default()
+    draw.text((TILE_PX / 2, TILE_PX / 2), label, fill=fg, font=font, anchor="mm")
+    return img
 
 
 def make_tile(url, meta):
@@ -236,8 +271,16 @@ def make_tile(url, meta):
             img, kind = _square(_download_image(meta["image"]), anchor_top=False), "preview"
         except Exception as e:  # a broken preview image falls back to a screenshot
             print(f"  preview image failed ({e}); taking a screenshot")
+    if img is None and not meta.get("blocked"):
+        try:
+            shot = screenshot(url)
+            img, kind = _square(shot[0], anchor_top=True), "screenshot"
+            if BLOCK_TITLES.match(shot[1] or ""):
+                img = None
+        except Exception as e:
+            print(f"  screenshot failed ({e}); drawing a name tile")
     if img is None:
-        img, kind = _square(screenshot(url), anchor_top=True), "screenshot"
+        img, kind = name_tile(meta.get("site_name") or site_of(url)), "name"
     img.save(out, "WEBP", quality=82)
     return f"img/{out.name}", kind
 
@@ -280,14 +323,19 @@ def classify(url, meta, folders, hint=None):
                 headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
             )
             with urllib.request.urlopen(req, timeout=60) as r:
-                answer = json.loads(json.loads(r.read())["choices"][0]["message"]["content"])
+                raw = r.read().decode("utf-8", "ignore")
+            try:
+                content = json.loads(raw)["choices"][0]["message"]["content"]
+                answer = json.loads(re.search(r"\{.*\}", content, re.S).group(0))
+            except Exception:
+                raise ValueError(f"unexpected reply: {raw[:300]}")
             name, folder = answer["name"].strip(), answer["folder"].strip()
             match = next((f for f in folders if f.lower() == folder.lower()), None)
             return name, match or folder[:1].upper() + folder[1:]
         except Exception as e:  # sorting must never block saving the link
             print(f"  automatic sorting failed ({e}); using keywords")
     text = " ".join(filter(None, [hint, url, meta.get("title"), meta.get("description")]))
-    title = (meta.get("title") or site_of(url)).split("|")[0].split(" — ")[0].split(" - ")[0].strip()
+    title = (meta.get("title") or site_of(url).split(".")[0].capitalize()).split("|")[0].split(" — ")[0].split(" - ")[0].strip()
     return title[:40], _keyword_folder(text)
 
 

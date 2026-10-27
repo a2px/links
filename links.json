@@ -1107,27 +1107,10 @@
   }
  },
  {
-  "id": "e530df02de",
-  "url": "https://coolors.co/",
-  "name": "Just a moment...",
-  "folder": "Other",
-  "site": "coolors.co",
-  "image": "img/e530df02de.webp",
-  "image_kind": "screenshot",
-  "added": "2026-10-27T02:05:59+00:00",
-  "source": {
-   "final_url": "https://coolors.co/",
-   "title": "Just a moment...",
-   "description": null,
-   "site_name": null,
-   "image": null
-  }
- },
- {
   "id": "40265e9dd2",
   "url": "https://geo.studio/works/grid-view",
-  "name": "GEO",
-  "folder": "Other",
+  "name": "GEO Studio",
+  "folder": "Portfolios",
   "site": "geo.studio",
   "image": "img/40265e9dd2.webp",
   "image_kind": "preview",
@@ -1138,6 +1121,23 @@
    "description": "GEO is a Los Angeles based creative studio. We offer brand identity, UI/UX, animation, 3D modeling, and web development services",
    "site_name": null,
    "image": "https://framerusercontent.com/images/8MV2ErgKq5dZOGmoCKzmIpSsgOg.png"
+  }
+ },
+ {
+  "id": "e530df02de",
+  "url": "https://coolors.co/",
+  "name": "Coolors",
+  "folder": "Colors",
+  "site": "coolors.co",
+  "image": "img/e530df02de.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T02:06:54+00:00",
+  "source": {
+   "final_url": "https://coolors.co/",
+   "title": "Coolors - The super fast color palettes generator!",
+   "description": "Generate or browse beautiful color combinations for your designs.",
+   "site_name": "Coolors.co",
+   "image": "https://coolors.co/assets/img/og_image.png"
   }
  }
 ]
