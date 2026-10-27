@@ -1565,5 +1565,22 @@
    "site_name": null,
    "image": "https://cdn.prod.website-files.com/68c1084e137e63873a526f0f/6940a6b7bb9902875225ad67_Antler%20open%20graph.jpg"
   }
+ },
+ {
+  "id": "94b8fb4484",
+  "url": "https://ui.aceternity.com/",
+  "name": "Aceternity",
+  "folder": "UI kits",
+  "site": "ui.aceternity.com",
+  "image": "img/94b8fb4484.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T05:52:59+00:00",
+  "source": {
+   "final_url": "https://ui.aceternity.com/",
+   "title": "Aceternity UI — React & Tailwind CSS Component Library",
+   "description": "Aceternity UI is a React component library with 200+ copy-paste components, blocks, and landing page templates built with Tailwind CSS and Motion.",
+   "site_name": "Aceternity UI",
+   "image": "https://ui.aceternity.com/banner.png"
+  }
  }
 ]
