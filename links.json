@@ -1139,5 +1139,22 @@
    "site_name": "Coolors.co",
    "image": "https://coolors.co/assets/img/og_image.png"
   }
+ },
+ {
+  "id": "0294e8c3be",
+  "url": "https://www.getstark.co/",
+  "name": "Stark: The suite of integrated accessibi",
+  "folder": "Other",
+  "site": "getstark.co",
+  "image": "img/0294e8c3be.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T02:14:17+00:00",
+  "source": {
+   "final_url": "https://www.getstark.co/",
+   "title": "Stark: The suite of integrated accessibility tools for your product design and development team",
+   "description": "The suite of integrated accessibility tools for your product design and development team • Making the world’s products accessible.",
+   "site_name": "Stark",
+   "image": "https://res.cloudinary.com/stark-lab/image/upload/v1761273066/marketing/meta/homepage_fzpkxd.png"
+  }
  }
 ]
