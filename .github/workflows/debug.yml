@@ -1,0 +1,17 @@
+name: Debug sorting
+on: workflow_dispatch
+permissions:
+  models: read
+  contents: read
+jobs:
+  d:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          B='{"model":"openai/gpt-4.1-mini","messages":[{"role":"user","content":"Say hi as JSON {\"x\":\"hi\"}"}]}'
+          for H in "" "-H Accept:application/vnd.github+json -H X-GitHub-Api-Version:2022-11-28"; do
+            echo "== models.github.ai $H"; curl -s -w "\nHTTP %{http_code}\n" -X POST https://models.github.ai/inference/chat/completions -H "Authorization: Bearer $GITHUB_TOKEN" -H "Content-Type: application/json" $H -d "$B" | cut -c1-300
+          done
+          echo "== with User-Agent python"; curl -s -w "\nHTTP %{http_code}\n" -A "Python-urllib/3.12" -X POST https://models.github.ai/inference/chat/completions -H "Authorization: Bearer $GITHUB_TOKEN" -H "Content-Type: application/json" -d "$B" | cut -c1-300
