@@ -1446,5 +1446,22 @@
    "site_name": "Able",
    "image": "https://ablext.app/og-image.png"
   }
+ },
+ {
+  "id": "14fcb6ded0",
+  "url": "https://fonts.ninja/",
+  "name": "Fonts Ninja",
+  "folder": "Fonts",
+  "site": "fonts.ninja",
+  "image": "img/14fcb6ded0.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T05:06:48+00:00",
+  "source": {
+   "final_url": "https://fonts.ninja/",
+   "title": "Discover, buy and download awesome fonts - Fonts Ninja",
+   "description": "Fonts Ninja helps designers discover awesome fonts and create stunning designs. Explore thousands of fonts and download them for free or buy premium ones.",
+   "site_name": null,
+   "image": "http://fonts.ninja/images/social.png"
+  }
  }
 ]
