@@ -1497,5 +1497,22 @@
    "site_name": null,
    "image": "https://lh3.googleusercontent.com/xkq24Y-hSgJHCOs7hskeMNfZatMQYRmybkMY8gGrzHTYVJiQR_2un6xgg9cXY93ShVNU5LdC7n5fddtbQxeNIV0hma8=s128-rj-sc0x00ffffff"
   }
+ },
+ {
+  "id": "e8e0e54570",
+  "url": "https://vizcom.com/product",
+  "name": "Vizcom",
+  "folder": "Tools",
+  "site": "vizcom.com",
+  "image": "img/e8e0e54570.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T05:51:18+00:00",
+  "source": {
+   "final_url": "https://vizcom.com/product",
+   "title": "Vizcom Features | AI Rendering, Collaboration & Design Tools",
+   "description": "One platform, endless possibilities. Discover AI rendering, team collaboration, and design tools built to accelerate your creative process.",
+   "site_name": null,
+   "image": "https://cdn.prod.website-files.com/68da69e18c8988d039a9f6fe/694b256896dd559dad1f8296_Generic_OpenGraph_1200x630.png"
+  }
  }
 ]
