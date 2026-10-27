@@ -1207,5 +1207,22 @@
    "site_name": "Shaders",
    "image": "https://shaders.com/og.jpg"
   }
+ },
+ {
+  "id": "10f72ab78d",
+  "url": "https://www.ls.graphics/",
+  "name": "Highest quality mockups for graphic and ",
+  "folder": "Portfolios",
+  "site": "ls.graphics",
+  "image": "img/10f72ab78d.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T02:55:03+00:00",
+  "source": {
+   "final_url": "https://www.ls.graphics/",
+   "title": "Highest quality mockups for graphic and UI designers",
+   "description": "Discover a vast collection of free and premium mockups for Photoshop and Figma. Enhance your design projects with high-quality device and packaging mockups",
+   "site_name": "ls.graphics",
+   "image": "https://ls-graphics-directus-direct.b-cdn.net/assets/922a8882-1999-4a16-8d2d-a3983a929e23"
+  }
  }
 ]
