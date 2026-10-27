@@ -4,15 +4,9 @@ on:
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
-    inputs:
-      check_sorting:
-        description: "Only test automatic sorting on one link"
-        required: false
-        default: ""
 
 permissions:
   contents: write
-  models: read
 
 concurrency:
   group: inbox
@@ -29,22 +23,14 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
-      - name: Test automatic sorting
-        if: ${{ inputs.check_sorting != '' }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python -c "import sys; sys.path.insert(0,'scripts'); import board; u='${{ inputs.check_sorting }}'; print(board.classify(u, board.fetch_metadata(u), board.DEFAULT_FOLDERS))"
       - name: Read new messages
-        if: ${{ inputs.check_sorting == '' }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_OWNER_ID: ${{ secrets.TELEGRAM_OWNER_ID }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NTFY_TOPIC: a2px-links-4afb6004d648
           PAGE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
         run: python scripts/telegram_inbox.py
       - name: Save changes
-        if: ${{ inputs.check_sorting == '' }}
         run: |
           git config user.name "link-board"
           git config user.email "link-board@users.noreply.github.com"

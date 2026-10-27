@@ -16,6 +16,7 @@ import json
 import os
 import re
 import sys
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -37,7 +38,7 @@ def api(method, **params):
         data=json.dumps(params).encode(),
         headers={"Content-Type": "application/json"},
     )
-    with urllib.request.urlopen(req, timeout=60) as r:
+    with urllib.request.urlopen(req, timeout=params.get("timeout", 0) + 30) as r:
         return json.loads(r.read())["result"]
 
 
@@ -156,6 +157,10 @@ def handle_button(query, state):
     if str(query["from"]["id"]) != OWNER:
         return False
     action, _, pid = (query.get("data") or "").partition(":")
+    try:
+        api("answerCallbackQuery", callback_query_id=query["id"], text="Adding..." if action == "add" else "")
+    except Exception as e:  # Telegram refuses answers to taps older than a few seconds
+        print(f"button answer failed: {e}")
     url = pending.pop(pid, None)
     msg = query.get("message") or {}
     done = "That suggestion was already handled."
@@ -171,10 +176,6 @@ def handle_button(query, state):
     elif url:
         done = f"Skipped {url}"
     try:
-        api("answerCallbackQuery", callback_query_id=query["id"])
-    except Exception as e:  # Telegram refuses answers to taps older than a few seconds
-        print(f"button answer failed: {e}")
-    try:
         if msg:
             api("editMessageText", chat_id=msg["chat"]["id"], message_id=msg["message_id"], text=done, disable_web_page_preview=True)
     except Exception as e:
@@ -182,10 +183,23 @@ def handle_button(query, state):
     return changed
 
 
-def main():
+def main(wait_seconds=0):
+    """One pass. wait_seconds > 0 holds the request open until a message arrives (the instant bot)."""
     state = json.loads(STATE_FILE.read_text()) if STATE_FILE.exists() else {"offset": 0}
     before = json.dumps(state, sort_keys=True)
-    updates = api("getUpdates", offset=state["offset"], timeout=0, allowed_updates=["message", "channel_post", "callback_query"])
+    try:
+        updates = api(
+            "getUpdates",
+            offset=state["offset"],
+            timeout=wait_seconds,
+            allowed_updates=["message", "channel_post", "callback_query"],
+        )
+    except urllib.error.HTTPError as e:
+        if e.code != 409:
+            raise
+        # The instant bot in the workspace is reading messages right now; it handles them.
+        print("another reader is handling messages")
+        updates = []
     changed = False
     for u in updates:
         state["offset"] = u["update_id"] + 1
@@ -201,4 +215,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(int(sys.argv[1]) if len(sys.argv) > 1 else 0)

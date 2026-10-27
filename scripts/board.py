@@ -293,43 +293,25 @@ def _keyword_folder(text):
     return "Other"
 
 
+def _plugin_classifier():
+    """An optional smarter sorter, named by LINK_BOARD_CLASSIFIER (a .py file defining classify())."""
+    path = os.environ.get("LINK_BOARD_CLASSIFIER")
+    if not path:
+        return None
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("link_board_classifier", path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod.classify
+
+
 def classify(url, meta, folders, hint=None):
-    """Pick a short name and a folder. Uses GitHub Models when a token is present."""
-    token = os.environ.get("GITHUB_TOKEN")
-    if token:
-        prompt = (
-            "You sort a designer's saved links into folders on a visual board.\n"
-            f"Existing folders: {', '.join(folders)}.\n"
-            "Prefer an existing folder. Create a new short plural folder name (1-2 words, sentence case) only if none fits.\n"
-            "Portfolios = an individual's personal or portfolio site. Companies = a company or product homepage.\n"
-            "Articles = blog posts and essays. Videos = YouTube/TikTok/Vimeo. Notes = shared notes documents.\n"
-            "Inspiration = galleries of design references. Dev tools = developer libraries and frameworks. UI kits = ready-made UI components and sections.\n"
-            "Also give a short display name (1-3 words, e.g. the person's name or the product's name).\n"
-            + (f"The user wrote this alongside the link: {hint!r}. If it names a folder, use it.\n" if hint else "")
-            + f"URL: {url}\nTitle: {meta.get('title')}\nDescription: {meta.get('description')}\n"
-            'Reply with JSON only: {"name": "...", "folder": "..."}'
-        )
+    """Pick a short name and a folder."""
+    plugin = _plugin_classifier()
+    if plugin:
         try:
-            req = urllib.request.Request(
-                "https://models.github.ai/inference/chat/completions",
-                data=json.dumps(
-                    {
-                        "model": "openai/gpt-4.1-mini",
-                        "messages": [{"role": "user", "content": prompt}],
-                        "response_format": {"type": "json_object"},
-                        "temperature": 0,
-                    }
-                ).encode(),
-                headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
-            )
-            with urllib.request.urlopen(req, timeout=60) as r:
-                raw = r.read().decode("utf-8", "ignore")
-            try:
-                content = json.loads(raw)["choices"][0]["message"]["content"]
-                answer = json.loads(re.search(r"\{.*\}", content, re.S).group(0))
-            except Exception:
-                raise ValueError(f"unexpected reply: {raw[:300]}")
-            name, folder = answer["name"].strip(), answer["folder"].strip()
+            name, folder = plugin(url, meta, folders, hint)
             match = next((f for f in folders if f.lower() == folder.lower()), None)
             return name, match or folder[:1].upper() + folder[1:]
         except Exception as e:  # sorting must never block saving the link
