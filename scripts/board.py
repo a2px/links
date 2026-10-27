@@ -26,6 +26,7 @@ TILE_PX = 480
 
 DEFAULT_FOLDERS = [
     "Portfolios",
+    "Studios",
     "Fonts",
     "Colors",
     "Textures",

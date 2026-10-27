@@ -804,7 +804,7 @@
   "id": "9709de9a81",
   "url": "https://rhymeandreason.studio/",
   "name": "Rhyme & Reason",
-  "folder": "Portfolios",
+  "folder": "Studios",
   "site": "rhymeandreason.studio",
   "image": "img/9709de9a81.webp",
   "image_kind": "screenshot",
@@ -1110,7 +1110,7 @@
   "id": "40265e9dd2",
   "url": "https://geo.studio/works/grid-view",
   "name": "GEO Studio",
-  "folder": "Portfolios",
+  "folder": "Studios",
   "site": "geo.studio",
   "image": "img/40265e9dd2.webp",
   "image_kind": "preview",
@@ -1309,6 +1309,23 @@
    "description": "Typewolf helps designers choose the perfect font combination for their next design project—features web fonts in the wild, font recommendations and learning resources.",
    "site_name": "Typewolf",
    "image": "https://www.typewolf.com/assets/img/typewolf-og.png"
+  }
+ },
+ {
+  "id": "41a2fdf813",
+  "url": "https://imbue.com/",
+  "name": "Imbue",
+  "folder": "Companies",
+  "site": "imbue.com",
+  "image": "img/41a2fdf813.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T03:54:31+00:00",
+  "source": {
+   "final_url": "https://imbue.com/",
+   "title": "We build honest software",
+   "description": "We build AI to help people think, create, and build. Tools that are loyal to you, not the company that built them.",
+   "site_name": null,
+   "image": "https://cdn.sanity.io/images/dg1xe82e/production/7cb5ad52dcebc484eb4d80cdd2d8b9645464aaf7-3840x2160.jpg?rect=0,72,3840,2016&w=1200&h=630"
   }
  }
 ]
