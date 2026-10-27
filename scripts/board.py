@@ -31,6 +31,7 @@ DEFAULT_FOLDERS = [
     "Textures",
     "Logos",
     "UI kits",
+    "Mockups",
     "Companies",
     "Landing pages",
     "Guides",
