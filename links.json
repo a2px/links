@@ -1548,5 +1548,22 @@
    "site_name": "Proto",
    "image": "https://prototypes.fun/opengraph-image-pwu6ef.jpg?opengraph-image.2u5yw35cmtw9v.jpg"
   }
+ },
+ {
+  "id": "e3a7b94be9",
+  "url": "https://www.antler.co/portfolio",
+  "name": "Antler",
+  "folder": "Companies",
+  "site": "antler.co",
+  "image": "img/e3a7b94be9.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T05:52:32+00:00",
+  "source": {
+   "final_url": "https://www.antler.co/portfolio",
+   "title": "Meet Our Portfolio | Antler",
+   "description": "Spanning 6 different continents and 30+ industries, meet our impressive range of Antler-backed startups.",
+   "site_name": null,
+   "image": "https://cdn.prod.website-files.com/68c1084e137e63873a526f0f/6940a6b7bb9902875225ad67_Antler%20open%20graph.jpg"
+  }
  }
 ]
