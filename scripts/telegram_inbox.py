@@ -172,6 +172,9 @@ def handle_button(query, state):
         done = f"Skipped {url}"
     try:
         api("answerCallbackQuery", callback_query_id=query["id"])
+    except Exception as e:  # Telegram refuses answers to taps older than a few seconds
+        print(f"button answer failed: {e}")
+    try:
         if msg:
             api("editMessageText", chat_id=msg["chat"]["id"], message_id=msg["message_id"], text=done, disable_web_page_preview=True)
     except Exception as e:
