@@ -1156,5 +1156,22 @@
    "site_name": "Stark",
    "image": "https://res.cloudinary.com/stark-lab/image/upload/v1761273066/marketing/meta/homepage_fzpkxd.png"
   }
+ },
+ {
+  "id": "dca4276ce5",
+  "url": "https://www.lovart.ai/",
+  "name": "Lovart – World's First AI Design Agent",
+  "folder": "Logos",
+  "site": "lovart.ai",
+  "image": "img/dca4276ce5.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T02:14:28+00:00",
+  "source": {
+   "final_url": "https://www.lovart.ai/",
+   "title": "Lovart – World's First AI Design Agent | Create Pro Designs in Minutes",
+   "description": "From logo to full marketing campaign in one conversation. Join 100K+ creators using the world's first AI Design Agent.",
+   "site_name": "Lovart",
+   "image": "https://assets-persist.lovart.ai/img/0ec3ec8352e24750bddb7764c24e81e1/d161b5ccddb06a2eb84f154ee56b0d95d75703e5.png"
+  }
  }
 ]
