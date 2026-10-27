@@ -1190,5 +1190,22 @@
    "site_name": null,
    "image": "https://freight.cargo.site/i/a663bb8cf298b931121ce94436b8afe46e04581707e357997074040a75225484/contentcore.xyz-opengraph.png"
   }
+ },
+ {
+  "id": "69b335813b",
+  "url": "https://shaders.com/",
+  "name": "Shaders: Open-source WebGPU shader compo",
+  "folder": "Other",
+  "site": "shaders.com",
+  "image": "img/69b335813b.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T02:54:29+00:00",
+  "source": {
+   "final_url": "https://shaders.com/",
+   "title": "Shaders: Open-source WebGPU shader components & free design editor",
+   "description": "Open-source (MIT) WebGPU shader components for Vue, React, Svelte, Solid & JS, plus a free design editor to compose and export them.",
+   "site_name": "Shaders",
+   "image": "https://shaders.com/og.jpg"
+  }
  }
 ]
