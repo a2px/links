@@ -27,7 +27,9 @@
   main { width: 100%; max-width: 1100px; margin: 0 auto; padding: 72px 48px 64px; flex: 1; }
 
   /* Search */
-  .search { margin: 0 0 40px; max-width: 420px; position: relative; }
+  .topbar { display: flex; align-items: center; gap: 16px; margin: 0 0 40px; }
+  .search { flex: 1; max-width: 420px; position: relative; }
+  .count { color: var(--muted); font-size: 13px; white-space: nowrap; font-variant-numeric: tabular-nums; }
   .search input { width: 100%; border: 0; border-radius: 14px; background: #f4f4f6; padding: 12px 14px 12px 40px;
     font: inherit; font-size: 15px; color: var(--ink); outline: none; -webkit-appearance: none; appearance: none; }
   .search input:focus { box-shadow: 0 0 0 2px rgba(0,0,0,.14); background: #fff; }
@@ -78,7 +80,8 @@
   @media (max-width: 600px) {
     :root { --tile: 64px; --radius: 16px; --gap-x: 0px; --gap-y: 22px; }
     main { padding: 28px 18px 48px; }
-    .search { margin-bottom: 28px; max-width: none; }
+    .topbar { margin-bottom: 28px; gap: 12px; }
+    .search { max-width: none; }
     .search input { font-size: 16px; }
     .submit { padding: 0 14px calc(20px + env(safe-area-inset-bottom)); }
     .submit form { flex-wrap: wrap; gap: 10px; padding: 16px; }
@@ -95,9 +98,12 @@
 </head>
 <body>
 <main>
+  <div class="topbar">
   <div class="search">
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg>
     <input type="search" id="search" placeholder="Search links" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Search links">
+  </div>
+  <span class="count" id="count"></span>
   </div>
   <div class="grid" id="desk"></div>
   <p class="empty" id="no-results" hidden></p>
@@ -138,12 +144,16 @@ function showFolders() {
 function render() {
   const words = fold(search.value).split(/\s+/).filter(Boolean);
   noResults.hidden = true;
+  const count = document.getElementById("count");
+  const total = `${links.length} link${links.length === 1 ? "" : "s"}`;
+  count.textContent = total;
   if (!words.length) return showFolders();
   const hits = links.filter(l => {
     const hay = fold([l.name, l.site, l.url, l.folder, l.source?.title, l.source?.description, l.source?.author].join(" "));
     return words.every(w => hay.includes(w));
   });
   desk.innerHTML = hits.map(l => linkTile(l, true)).join("");
+  count.textContent = `${hits.length} of ${total}`;
   if (!hits.length) { noResults.textContent = `No links match "${search.value.trim()}".`; noResults.hidden = false; }
 }
 search.addEventListener("input", render);
