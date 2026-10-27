@@ -1480,5 +1480,22 @@
    "site_name": "html.to.design — Convert any website into fully editable Figma designs",
    "image": "https://html.to.design/img/meta/h2d-banner.jpg"
   }
+ },
+ {
+  "id": "9ccb48b218",
+  "url": "https://chromewebstore.google.com/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl?hl=en&pli=1",
+  "name": "GoFullPage",
+  "folder": "Tools",
+  "site": "chromewebstore.google.com",
+  "image": "img/9ccb48b218.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T05:07:31+00:00",
+  "source": {
+   "final_url": "https://chromewebstore.google.com/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl?hl=en&pli=1",
+   "title": "GoFullPage - Full Page Screen Capture - Chrome Web Store",
+   "description": "Capture a screenshot of your current page in entirety and reliably—without requesting any extra permissions!",
+   "site_name": null,
+   "image": "https://lh3.googleusercontent.com/xkq24Y-hSgJHCOs7hskeMNfZatMQYRmybkMY8gGrzHTYVJiQR_2un6xgg9cXY93ShVNU5LdC7n5fddtbQxeNIV0hma8=s128-rj-sc0x00ffffff"
+  }
  }
 ]
