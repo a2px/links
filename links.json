@@ -1599,5 +1599,23 @@
    "site_name": "animos",
    "image": "https://animos.app/og-image.png"
   }
+ },
+ {
+  "id": "1b6fec754a",
+  "url": "https://designeer.xyz/",
+  "name": "Designeer",
+  "folder": "Portfolios",
+  "site": "designeer.xyz",
+  "image": "img/1b6fec754a.webp",
+  "image_kind": "name",
+  "added": "2026-10-27T20:52:02+00:00",
+  "source": {
+   "final_url": "https://designeer.xyz/",
+   "title": null,
+   "description": null,
+   "site_name": null,
+   "image": null,
+   "blocked": true
+  }
  }
 ]
