@@ -1412,5 +1412,22 @@
    "site_name": null,
    "image": "https://docusaurus.io/img/docusaurus-social-card.jpg"
   }
+ },
+ {
+  "id": "e330ff8eaa",
+  "url": "https://bezier.method.ac/",
+  "name": "Bézier Game",
+  "folder": "Guides",
+  "site": "bezier.method.ac",
+  "image": "img/e330ff8eaa.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T03:58:07+00:00",
+  "source": {
+   "final_url": "https://bezier.method.ac/",
+   "title": "The Bézier Game",
+   "description": "A game to help you master the pen tool",
+   "site_name": null,
+   "image": "http://bezier.method.ac/images/fbimage.png"
+  }
  }
 ]
