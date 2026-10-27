@@ -1531,5 +1531,22 @@
    "site_name": null,
    "image": "https://cdn.prod.website-files.com/66c4a4d95e549a87dd8ddee9/670eaa05755e2542656ca4aa_og_image.png"
   }
+ },
+ {
+  "id": "8ba627abaa",
+  "url": "https://prototypes.fun/",
+  "name": "Proto",
+  "folder": "Tools",
+  "site": "prototypes.fun",
+  "image": "img/8ba627abaa.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T05:52:17+00:00",
+  "source": {
+   "final_url": "https://prototypes.fun/",
+   "title": "Proto",
+   "description": "Proto design partner experience.",
+   "site_name": "Proto",
+   "image": "https://prototypes.fun/opengraph-image-pwu6ef.jpg?opengraph-image.2u5yw35cmtw9v.jpg"
+  }
  }
 ]
