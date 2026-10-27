@@ -1242,5 +1242,56 @@
    "image": "https://i.ytimg.com/vi/ypzNhwpmOD4/hqdefault.jpg",
    "author": "Y Combinator"
   }
+ },
+ {
+  "id": "7be4fc240d",
+  "url": "https://www.mintlify.com/",
+  "name": "Mintlify",
+  "folder": "Companies",
+  "site": "mintlify.com",
+  "image": "img/7be4fc240d.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T03:11:36+00:00",
+  "source": {
+   "final_url": "https://www.mintlify.com/",
+   "title": "Mintlify - The documentation platform for agents",
+   "description": "Self-updating documentation for startups, enterprises, and agents.",
+   "site_name": "Mintlify",
+   "image": "https://www.mintlify.com/_next/static/media/og.28576e75.png"
+  }
+ },
+ {
+  "id": "3d1eb24243",
+  "url": "https://posthog.com/",
+  "name": "PostHog",
+  "folder": "Companies",
+  "site": "posthog.com",
+  "image": "img/3d1eb24243.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T03:11:37+00:00",
+  "source": {
+   "final_url": "https://posthog.com/",
+   "title": "PostHog – Your product’s context layer",
+   "description": "PostHog automatically diagnoses problems, fixes bugs, and generates pull requests – all without you having to prompt it.",
+   "site_name": null,
+   "image": "https://posthog.com/images/og/default.png"
+  }
+ },
+ {
+  "id": "61937ae28f",
+  "url": "https://sentry.io/",
+  "name": "Sentry",
+  "folder": "Companies",
+  "site": "sentry.io",
+  "image": "img/61937ae28f.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T03:11:38+00:00",
+  "source": {
+   "final_url": "https://sentry.io/welcome/",
+   "title": "Application Performance Monitoring & Error Tracking Software",
+   "description": "Application performance monitoring for developers & software teams to see errors clearer, solve issues faster & continue learning continuously. Get started at sentry.io.",
+   "site_name": "Sentry",
+   "image": "https://sentry.io/_astro/home-hero-meta.DJDejDMD.webp"
+  }
  }
 ]
