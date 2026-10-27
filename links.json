@@ -1173,5 +1173,22 @@
    "site_name": "Lovart",
    "image": "https://assets-persist.lovart.ai/img/0ec3ec8352e24750bddb7764c24e81e1/d161b5ccddb06a2eb84f154ee56b0d95d75703e5.png"
   }
+ },
+ {
+  "id": "273e251413",
+  "url": "https://contentcore.xyz/",
+  "name": "ContentCore",
+  "folder": "Other",
+  "site": "contentcore.xyz",
+  "image": "img/273e251413.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T02:54:13+00:00",
+  "source": {
+   "final_url": "https://contentcore.xyz/",
+   "title": "ContentCore",
+   "description": "Create content in one place. Incredibly fast. Save as images or videos.",
+   "site_name": null,
+   "image": "https://freight.cargo.site/i/a663bb8cf298b931121ce94436b8afe46e04581707e357997074040a75225484/contentcore.xyz-opengraph.png"
+  }
  }
 ]
