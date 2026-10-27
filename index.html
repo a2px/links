@@ -26,6 +26,16 @@
   body { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
   main { width: 100%; max-width: 1100px; margin: 0 auto; padding: 72px 48px 64px; flex: 1; }
 
+  /* Search */
+  .search { margin: 0 0 40px; max-width: 420px; position: relative; }
+  .search input { width: 100%; border: 0; border-radius: 14px; background: #f4f4f6; padding: 12px 14px 12px 40px;
+    font: inherit; font-size: 15px; color: var(--ink); outline: none; -webkit-appearance: none; appearance: none; }
+  .search input:focus { box-shadow: 0 0 0 2px rgba(0,0,0,.14); background: #fff; }
+  .search input::-webkit-search-cancel-button { -webkit-appearance: none; }
+  .search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--muted); pointer-events: none; }
+  .empty { color: var(--muted); font-size: 14px; }
+  .item .where { font-size: 11px; color: var(--muted); margin-top: -6px; }
+
   /* Submit a link */
   .submit { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 48px 40px; }
   .submit form { background: #f4f4f6; border-radius: 20px; padding: 18px 18px 18px 22px;
@@ -67,7 +77,9 @@
 
   @media (max-width: 600px) {
     :root { --tile: 64px; --radius: 16px; --gap-x: 0px; --gap-y: 22px; }
-    main { padding: 40px 18px 48px; }
+    main { padding: 28px 18px 48px; }
+    .search { margin-bottom: 28px; max-width: none; }
+    .search input { font-size: 16px; }
     .submit { padding: 0 14px calc(20px + env(safe-area-inset-bottom)); }
     .submit form { flex-wrap: wrap; gap: 10px; padding: 16px; }
     .submit label { width: 100%; }
@@ -82,7 +94,14 @@
 </style>
 </head>
 <body>
-<main><div class="grid" id="desk"></div></main>
+<main>
+  <div class="search">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg>
+    <input type="search" id="search" placeholder="Search links" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Search links">
+  </div>
+  <div class="grid" id="desk"></div>
+  <p class="empty" id="no-results" hidden></p>
+</main>
 <footer class="submit">
   <form id="submit-form" autocomplete="off">
     <label for="submit-url">Submit a link</label>
@@ -96,25 +115,47 @@
 <script>
 const ORDER = ["Portfolios", "Fonts", "Colors", "Textures", "Logos", "UI kits", "Inspiration", "Landing pages", "Companies", "Dev tools", "Articles", "Guides", "Notes", "Videos", "Events"];
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-function linkTile(l) {
+function linkTile(l, showFolder) {
   return `<a class="item link" href="${esc(l.url)}" target="_blank" rel="noopener" title="${esc(l.name)}\n${esc(l.url)}" data-url="${esc(l.url)}">
     <div class="icon"><img src="${esc(l.image)}" alt="" loading="lazy"></div>
-    <div class="label">${esc(l.name)}</div></a>`;
+    <div class="label">${esc(l.name)}</div>${showFolder ? `<div class="label where">${esc(l.folder)}</div>` : ""}</a>`;
 }
-fetch("links.json", {cache: "no-cache"}).then(r => r.json()).then(links => {
-  const groups = {};
-  links.forEach(l => (groups[l.folder] ||= []).push(l));
-  const names = Object.keys(groups).sort((a, b) => (ORDER.indexOf(a) + 99 * (ORDER.indexOf(a) < 0)) - (ORDER.indexOf(b) + 99 * (ORDER.indexOf(b) < 0)));
-  document.getElementById("desk").innerHTML = names.map(n => `
+const desk = document.getElementById("desk"), search = document.getElementById("search"), noResults = document.getElementById("no-results");
+let links = [], groups = {}, folderNames = [];
+const fold = s => String(s ?? "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+function showFolders() {
+  desk.innerHTML = folderNames.map(n => `
     <button class="item folder" data-folder="${esc(n)}">
       <div class="icon">${groups[n].slice(0, 4).map(l => `<span><img src="${esc(l.image)}" alt="" loading="lazy"></span>`).join("")}</div>
       <div class="label">${esc(n)}</div></button>`).join("");
-  document.querySelectorAll(".folder").forEach(f => f.onclick = () => {
+  desk.querySelectorAll(".folder").forEach(f => f.onclick = () => {
     const n = f.dataset.folder;
     document.getElementById("folder-title").textContent = n;
-    document.getElementById("folder-grid").innerHTML = groups[n].map(linkTile).join("");
+    document.getElementById("folder-grid").innerHTML = groups[n].map(l => linkTile(l)).join("");
     document.getElementById("scrim").classList.add("open");
   });
+}
+function render() {
+  const words = fold(search.value).split(/\s+/).filter(Boolean);
+  noResults.hidden = true;
+  if (!words.length) return showFolders();
+  const hits = links.filter(l => {
+    const hay = fold([l.name, l.site, l.url, l.folder, l.source?.title, l.source?.description, l.source?.author].join(" "));
+    return words.every(w => hay.includes(w));
+  });
+  desk.innerHTML = hits.map(l => linkTile(l, true)).join("");
+  if (!hits.length) { noResults.textContent = `No links match "${search.value.trim()}".`; noResults.hidden = false; }
+}
+search.addEventListener("input", render);
+search.addEventListener("keydown", e => { if (e.key === "Escape") { search.value = ""; render(); search.blur(); } });
+document.addEventListener("keydown", e => {
+  if (e.key === "/" && document.activeElement.tagName !== "INPUT") { e.preventDefault(); search.focus(); }
+});
+fetch("links.json", {cache: "no-cache"}).then(r => r.json()).then(data => {
+  links = data;
+  links.forEach(l => (groups[l.folder] ||= []).push(l));
+  folderNames = Object.keys(groups).sort((a, b) => (ORDER.indexOf(a) + 99 * (ORDER.indexOf(a) < 0)) - (ORDER.indexOf(b) + 99 * (ORDER.indexOf(b) < 0)));
+  render();
 });
 const SUBMIT_TOPIC = "a2px-links-4afb6004d648";
 const form = document.getElementById("submit-form"), note = document.getElementById("submit-note");
