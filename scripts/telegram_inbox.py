@@ -75,7 +75,13 @@ def handle(message):
         return False
     urls, words = urls_in(message)
     if not urls:
-        reply(chat_id, "Send me a link and I'll add it to your board.")
+        reply(
+            chat_id,
+            "Send me a link and I'll add it to your board, sorted into a folder.\n"
+            "fonts https://... puts it in a folder you name\n"
+            "#New folder https://... starts a new folder\n"
+            "remove https://... takes it off\n" + PAGE_URL,
+        )
         return False
     changed = False
     if words.lower() in ("remove", "delete"):
