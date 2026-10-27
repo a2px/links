@@ -1,0 +1,275 @@
+"""Add and remove links on the board.
+
+Every link gets a square preview image (the page's link-preview image, or a
+screenshot of the page when it has none), a short name and a folder. The raw
+metadata fetched from the page is kept on each record under "source".
+"""
+
+import datetime
+import hashlib
+import html
+import io
+import json
+import os
+import re
+import urllib.parse
+import urllib.request
+from pathlib import Path
+
+from PIL import Image
+
+ROOT = Path(__file__).resolve().parent.parent
+LINKS_FILE = ROOT / "links.json"
+IMG_DIR = ROOT / "img"
+UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36"
+TILE_PX = 480
+
+DEFAULT_FOLDERS = [
+    "Portfolios",
+    "Fonts",
+    "Colors",
+    "Textures",
+    "Logos",
+    "Companies",
+    "Landing pages",
+    "Guides",
+    "Events",
+    "Other",
+]
+
+KEYWORD_FOLDERS = [
+    ("Fonts", ["font", "typeface", "type foundry", "typography", "lettering"]),
+    ("Colors", ["color", "colour", "palette", "gradient"]),
+    ("Textures", ["texture", "grain", "pattern"]),
+    ("Logos", ["logo", "trademark", "symbol", "brand mark"]),
+    ("Portfolios", ["portfolio", "designer", "my work", "case stud", "framer.website"]),
+    ("Guides", ["guide", "how to", "tutorial", "templates", "tips"]),
+    ("Events", ["conference", "summit", "apply to speak", "tickets", "meetup"]),
+    ("Landing pages", ["landing page"]),
+]
+
+
+def load_links():
+    if LINKS_FILE.exists():
+        return json.loads(LINKS_FILE.read_text())
+    return []
+
+
+def save_links(links):
+    LINKS_FILE.write_text(json.dumps(links, indent=1, ensure_ascii=False) + "\n")
+
+
+def normalize(url):
+    url = url.strip()
+    if not re.match(r"^https?://", url, re.I):
+        url = "https://" + url
+    parts = urllib.parse.urlsplit(url)
+    return urllib.parse.urlunsplit((parts.scheme.lower(), parts.netloc.lower(), parts.path or "/", parts.query, ""))
+
+
+def same_link(a, b):
+    def key(u):
+        p = urllib.parse.urlsplit(normalize(u))
+        return (p.netloc.removeprefix("www."), p.path.rstrip("/"), p.query)
+
+    return key(a) == key(b)
+
+
+def site_of(url):
+    return urllib.parse.urlsplit(url).netloc.removeprefix("www.")
+
+
+def link_id(url):
+    return hashlib.sha1(url.encode()).hexdigest()[:10]
+
+
+def _meta(page, keys):
+    for k in keys:
+        for pattern in (
+            rf'<meta[^>]+(?:property|name)=["\']{k}["\'][^>]*content=["\']([^"\']+)',
+            rf'<meta[^>]+content=["\']([^"\']+)["\'][^>]*(?:property|name)=["\']{k}["\']',
+        ):
+            m = re.search(pattern, page, re.I)
+            if m:
+                return html.unescape(m.group(1)).strip()
+    return None
+
+
+def fetch_metadata(url):
+    """The page's own title, description and preview image, as fetched."""
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "en"})
+    with urllib.request.urlopen(req, timeout=25) as r:
+        final_url = r.url
+        page = r.read(1_500_000).decode("utf-8", "ignore")
+    title_tag = re.search(r"<title[^>]*>(.*?)</title>", page, re.I | re.S)
+    image = _meta(page, ["og:image", "og:image:url", "twitter:image", "twitter:image:src"])
+    if image:
+        image = urllib.parse.urljoin(final_url, image)
+    return {
+        "final_url": final_url,
+        "title": _meta(page, ["og:title", "twitter:title"])
+        or (html.unescape(title_tag.group(1)).strip() if title_tag else None),
+        "description": _meta(page, ["og:description", "description", "twitter:description"]),
+        "site_name": _meta(page, ["og:site_name"]),
+        "image": image,
+    }
+
+
+def _square(img, anchor_top):
+    img = img.convert("RGB")
+    w, h = img.size
+    side = min(w, h)
+    left = (w - side) // 2
+    top = 0 if anchor_top else (h - side) // 2
+    return img.crop((left, top, left + side, top + side)).resize((TILE_PX, TILE_PX), Image.LANCZOS)
+
+
+def _download_image(src):
+    req = urllib.request.Request(src, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return Image.open(io.BytesIO(r.read()))
+
+
+def screenshot(url):
+    import subprocess
+    import sys
+
+    from playwright.sync_api import sync_playwright
+
+    if os.environ.get("CI") and not os.environ.get("BROWSER_PATH"):
+        subprocess.run([sys.executable, "-m", "playwright", "install", "--with-deps", "chromium"], check=True)
+
+    launch = {"args": ["--no-sandbox"]}
+    if os.environ.get("BROWSER_PATH"):
+        launch["executable_path"] = os.environ["BROWSER_PATH"]
+    with sync_playwright() as p:
+        browser = p.chromium.launch(**launch)
+        page = browser.new_page(viewport={"width": 1200, "height": 900})
+        page.goto(url, wait_until="domcontentloaded", timeout=45000)
+        page.wait_for_timeout(5000)
+        png = page.screenshot()
+        browser.close()
+    return Image.open(io.BytesIO(png))
+
+
+def make_tile(url, meta):
+    """Save the square tile image; returns (relative path, how it was made)."""
+    IMG_DIR.mkdir(exist_ok=True)
+    out = IMG_DIR / f"{link_id(url)}.webp"
+    img, kind = None, None
+    generic = meta.get("image") and re.search(r"notion\.(so|com)/images/meta", meta["image"])
+    if meta.get("image") and not generic:
+        try:
+            img, kind = _square(_download_image(meta["image"]), anchor_top=False), "preview"
+        except Exception as e:  # a broken preview image falls back to a screenshot
+            print(f"  preview image failed ({e}); taking a screenshot")
+    if img is None:
+        img, kind = _square(screenshot(url), anchor_top=True), "screenshot"
+    img.save(out, "WEBP", quality=82)
+    return f"img/{out.name}", kind
+
+
+def _keyword_folder(text):
+    text = text.lower()
+    for folder, words in KEYWORD_FOLDERS:
+        if any(w in text for w in words):
+            return folder
+    return "Other"
+
+
+def classify(url, meta, folders, hint=None):
+    """Pick a short name and a folder. Uses GitHub Models when a token is present."""
+    token = os.environ.get("GITHUB_TOKEN")
+    if token:
+        prompt = (
+            "You sort a designer's saved links into folders on a visual board.\n"
+            f"Existing folders: {', '.join(folders)}.\n"
+            "Prefer an existing folder. Create a new short plural folder name (1-2 words, sentence case) only if none fits.\n"
+            "Portfolios = an individual's personal or portfolio site. Companies = a company or product homepage.\n"
+            "Also give a short display name (1-3 words, e.g. the person's name or the product's name).\n"
+            + (f"The user wrote this alongside the link: {hint!r}. If it names a folder, use it.\n" if hint else "")
+            + f"URL: {url}\nTitle: {meta.get('title')}\nDescription: {meta.get('description')}\n"
+            'Reply with JSON only: {"name": "...", "folder": "..."}'
+        )
+        try:
+            req = urllib.request.Request(
+                "https://models.github.ai/inference/chat/completions",
+                data=json.dumps(
+                    {
+                        "model": "openai/gpt-4.1-mini",
+                        "messages": [{"role": "user", "content": prompt}],
+                        "response_format": {"type": "json_object"},
+                        "temperature": 0,
+                    }
+                ).encode(),
+                headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+            )
+            with urllib.request.urlopen(req, timeout=60) as r:
+                answer = json.loads(json.loads(r.read())["choices"][0]["message"]["content"])
+            name, folder = answer["name"].strip(), answer["folder"].strip()
+            match = next((f for f in folders if f.lower() == folder.lower()), None)
+            return name, match or folder[:1].upper() + folder[1:]
+        except Exception as e:  # sorting must never block saving the link
+            print(f"  automatic sorting failed ({e}); using keywords")
+    text = " ".join(filter(None, [hint, url, meta.get("title"), meta.get("description")]))
+    title = (meta.get("title") or site_of(url)).split("|")[0].split(" — ")[0].split(" - ")[0].strip()
+    return title[:40], _keyword_folder(text)
+
+
+def add_link(url, folder=None, name=None, hint=None):
+    """Add one link. Returns (record, created). An existing link is updated in place."""
+    url = normalize(url)
+    links = load_links()
+    existing = next((l for l in links if same_link(l["url"], url)), None)
+    if existing:
+        if not (folder or name):
+            return existing, False
+        existing.update(name=name or existing["name"], folder=folder or existing["folder"])
+        save_links(links)
+        return existing, False
+    meta = fetch_metadata(url)
+    folders = list(dict.fromkeys(DEFAULT_FOLDERS + [l["folder"] for l in links]))
+    if not (folder and name):
+        auto_name, auto_folder = classify(url, meta, folders, hint)
+        name, folder = name or auto_name, folder or auto_folder
+    image, image_kind = make_tile(url, meta)
+    record = {
+        "id": link_id(url),
+        "url": url,
+        "name": name,
+        "folder": folder,
+        "site": site_of(url),
+        "image": image,
+        "image_kind": image_kind,
+        "added": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
+        "source": meta,
+    }
+    links.append(record)
+    save_links(links)
+    return record, True
+
+
+def remove_link(url):
+    links = load_links()
+    keep = [l for l in links if not same_link(l["url"], url)]
+    gone = [l for l in links if same_link(l["url"], url)]
+    for l in gone:
+        (ROOT / l["image"]).unlink(missing_ok=True)
+    save_links(keep)
+    return gone
+
+
+if __name__ == "__main__":
+    import argparse
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("url")
+    ap.add_argument("--folder")
+    ap.add_argument("--name")
+    ap.add_argument("--remove", action="store_true")
+    a = ap.parse_args()
+    if a.remove:
+        print(f"removed {len(remove_link(a.url))}")
+    else:
+        rec, created = add_link(a.url, a.folder, a.name)
+        print(("added" if created else "exists"), rec["folder"], "/", rec["name"], rec["image_kind"] if created else "")

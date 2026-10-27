@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Links</title>
+<meta name="description" content="A board of links worth keeping.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Links">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.png">
+<style>
+  :root {
+    --tile: 104px;
+    --radius: 24px;
+    --gap-x: 40px;
+    --gap-y: 28px;
+    --ink: #1d1d1f;
+    --muted: #86868b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #fff; color: var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+  main { max-width: 1100px; margin: 0 auto; padding: 72px 48px 96px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, var(--tile)); gap: var(--gap-y) var(--gap-x); justify-content: start; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 9px; width: var(--tile);
+    text-decoration: none; color: inherit; cursor: pointer; background: none; border: 0; padding: 0; font: inherit; }
+  .icon { width: var(--tile); height: var(--tile); border-radius: var(--radius); overflow: hidden;
+    background: #f2f2f4; box-shadow: 0 0 0 0.5px rgba(0,0,0,.08), 0 2px 8px rgba(0,0,0,.06);
+    transition: transform .18s ease, box-shadow .18s ease; }
+  .icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .item:hover .icon { transform: translateY(-2px); box-shadow: 0 0 0 0.5px rgba(0,0,0,.08), 0 8px 20px rgba(0,0,0,.10); }
+  .item:active .icon { transform: scale(.96); }
+  .label { font-size: 12.5px; line-height: 1.25; text-align: center; max-width: calc(var(--tile) + 24px);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .folder .icon { background: #ececf0; padding: 9px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; }
+  .folder .icon span { border-radius: 9px; overflow: hidden; background: #dcdce2; aspect-ratio: 1; }
+  .folder .icon span img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* Open folder */
+  .scrim { position: fixed; inset: 0; background: rgba(255,255,255,.55); backdrop-filter: blur(22px) saturate(1.2);
+    -webkit-backdrop-filter: blur(22px) saturate(1.2); display: none; align-items: center; justify-content: center; padding: 24px; z-index: 10; }
+  .scrim.open { display: flex; animation: fade .18s ease; }
+  .sheet { width: min(640px, 100%); max-height: 86vh; overflow: auto; }
+  .sheet h2 { font-size: 28px; font-weight: 600; letter-spacing: -.01em; margin: 0 0 28px; text-align: center; }
+  .panel { background: rgba(236,236,240,.85); border-radius: 36px; padding: 32px; }
+  .panel .grid { justify-content: center; }
+  @keyframes fade { from { opacity: 0; transform: scale(.98); } to { opacity: 1; transform: none; } }
+
+  @media (max-width: 600px) {
+    :root { --tile: 64px; --radius: 16px; --gap-x: 0px; --gap-y: 22px; }
+    main { padding: 40px 18px 64px; }
+    .grid { grid-template-columns: repeat(4, 1fr); justify-items: center; }
+    .label { font-size: 11px; max-width: 76px; }
+    .folder .icon { padding: 6px; gap: 4px; }
+    .folder .icon span { border-radius: 4px; }
+    .panel { padding: 24px 12px; border-radius: 28px; }
+    .sheet h2 { font-size: 22px; margin-bottom: 18px; }
+    .item:hover .icon { transform: none; }
+  }
+</style>
+</head>
+<body>
+<main><div class="grid" id="desk"></div></main>
+<div class="scrim" id="scrim"><div class="sheet"><h2 id="folder-title"></h2><div class="panel"><div class="grid" id="folder-grid"></div></div></div></div>
+<script>
+const ORDER = ["Portfolios", "Fonts", "Colors", "Textures", "Logos", "Companies", "Landing pages", "Guides", "Events"];
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function linkTile(l) {
+  return `<a class="item link" href="${esc(l.url)}" target="_blank" rel="noopener" title="${esc(l.name)}\n${esc(l.url)}" data-url="${esc(l.url)}">
+    <div class="icon"><img src="${esc(l.image)}" alt="" loading="lazy"></div>
+    <div class="label">${esc(l.name)}</div></a>`;
+}
+fetch("links.json", {cache: "no-cache"}).then(r => r.json()).then(links => {
+  const groups = {};
+  links.forEach(l => (groups[l.folder] ||= []).push(l));
+  const names = Object.keys(groups).sort((a, b) => (ORDER.indexOf(a) + 99 * (ORDER.indexOf(a) < 0)) - (ORDER.indexOf(b) + 99 * (ORDER.indexOf(b) < 0)));
+  document.getElementById("desk").innerHTML = names.map(n => `
+    <button class="item folder" data-folder="${esc(n)}">
+      <div class="icon">${groups[n].slice(0, 4).map(l => `<span><img src="${esc(l.image)}" alt="" loading="lazy"></span>`).join("")}</div>
+      <div class="label">${esc(n)}</div></button>`).join("");
+  document.querySelectorAll(".folder").forEach(f => f.onclick = () => {
+    const n = f.dataset.folder;
+    document.getElementById("folder-title").textContent = n;
+    document.getElementById("folder-grid").innerHTML = groups[n].map(linkTile).join("");
+    document.getElementById("scrim").classList.add("open");
+  });
+});
+const scrim = document.getElementById("scrim");
+scrim.onclick = e => { if (e.target === scrim || e.target.classList.contains("sheet")) scrim.classList.remove("open"); };
+document.addEventListener("keydown", e => { if (e.key === "Escape") scrim.classList.remove("open"); });
+</script>
+</body>
+</html>
