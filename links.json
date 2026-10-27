@@ -1582,5 +1582,22 @@
    "site_name": "Aceternity UI",
    "image": "https://ui.aceternity.com/banner.png"
   }
+ },
+ {
+  "id": "23e9086753",
+  "url": "https://animos.app/",
+  "name": "Animos",
+  "folder": "Tools",
+  "site": "animos.app",
+  "image": "img/23e9086753.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T05:53:31+00:00",
+  "source": {
+   "final_url": "https://animos.app/",
+   "title": "animos — Motion templates for design showcases",
+   "description": "Showcase your designs in motion. 25 ready-made animation templates — drop in your work, tweak, and export an MP4, all in your browser.",
+   "site_name": "animos",
+   "image": "https://animos.app/og-image.png"
+  }
  }
 ]
