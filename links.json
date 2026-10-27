@@ -1247,7 +1247,7 @@
   "id": "7be4fc240d",
   "url": "https://www.mintlify.com/",
   "name": "Mintlify",
-  "folder": "Companies",
+  "folder": "Documentation",
   "site": "mintlify.com",
   "image": "img/7be4fc240d.webp",
   "image_kind": "preview",
@@ -1264,7 +1264,7 @@
   "id": "3d1eb24243",
   "url": "https://posthog.com/",
   "name": "PostHog",
-  "folder": "Companies",
+  "folder": "Analytics",
   "site": "posthog.com",
   "image": "img/3d1eb24243.webp",
   "image_kind": "preview",
@@ -1281,7 +1281,7 @@
   "id": "61937ae28f",
   "url": "https://sentry.io/",
   "name": "Sentry",
-  "folder": "Companies",
+  "folder": "Analytics",
   "site": "sentry.io",
   "image": "img/61937ae28f.webp",
   "image_kind": "preview",
@@ -1326,6 +1326,91 @@
    "description": "We build AI to help people think, create, and build. Tools that are loyal to you, not the company that built them.",
    "site_name": null,
    "image": "https://cdn.sanity.io/images/dg1xe82e/production/7cb5ad52dcebc484eb4d80cdd2d8b9645464aaf7-3840x2160.jpg?rect=0,72,3840,2016&w=1200&h=630"
+  }
+ },
+ {
+  "id": "60980a119a",
+  "url": "https://amplitude.com/",
+  "name": "Amplitude",
+  "folder": "Analytics",
+  "site": "amplitude.com",
+  "image": "img/60980a119a.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T03:55:48+00:00",
+  "source": {
+   "final_url": "https://amplitude.com/",
+   "title": "Amplitude | A new era for product teams",
+   "description": "From analytics to feedback to code, Amplitude brings AI into every step of building self-improving products. Start free with 2M events per month.",
+   "site_name": "Amplitude",
+   "image": "https://amplitude.com/nextjs-public/amplitude-default-seo.png"
+  }
+ },
+ {
+  "id": "bf183ab3e0",
+  "url": "https://www.hotjar.com/",
+  "name": "Hotjar",
+  "folder": "Analytics",
+  "site": "hotjar.com",
+  "image": "img/bf183ab3e0.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T03:55:50+00:00",
+  "source": {
+   "final_url": "https://contentsquare.com/hotjar/?utm_campaign=exp__hj_hp_redirection",
+   "title": "Official Hotjar Site – Sign up for free",
+   "description": "Contentsquare, the global leader in digital experience analytics, has joined forces with Hotjar, the leading product experience insights platform in the midsize and SMB market.",
+   "site_name": null,
+   "image": "https://images.ctfassets.net/gwbpo1m641r7/2OfjAWPDnhww9GwGYm7nTQ/43ba7809ba482b743d135ae78d8c9152/csqxhotjar.png"
+  }
+ },
+ {
+  "id": "16718b5e13",
+  "url": "https://vercel.com/analytics",
+  "name": "Vercel Analytics",
+  "folder": "Analytics",
+  "site": "vercel.com",
+  "image": "img/16718b5e13.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T03:55:53+00:00",
+  "source": {
+   "final_url": "https://vercel.com/products/observability",
+   "title": "Observability",
+   "description": "Monitor, debug, and optimize your web applications with Vercel Observability.",
+   "site_name": "Vercel",
+   "image": "https://lishhsx6kmthaacj.public.blob.vercel-storage.com/observability-og.png"
+  }
+ },
+ {
+  "id": "9f2e3f7b7c",
+  "url": "https://marketingplatform.google.com/about/analytics/",
+  "name": "Google Analytics 4",
+  "folder": "Analytics",
+  "site": "marketingplatform.google.com",
+  "image": "img/9f2e3f7b7c.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T03:55:55+00:00",
+  "source": {
+   "final_url": "https://marketingplatform.google.com/about/analytics/",
+   "title": "Analytics Tools & Solutions for Your Business - Google Analytics",
+   "description": "Google Analytics gives you the tools you need to better understand your customers. You can then use those business insights to take action, such as improving your website, creating tailored audience lists, and more.",
+   "site_name": "Google Marketing Platform",
+   "image": "https://lh3.googleusercontent.com/oz5bCMIFGBqul5z56AbXXgjTcrJQmtYeXJRijeeobpk3qP9CMLrJtkh1LUKkj5fr2pfXxnRu10R0zeFiyCB5dYRWqqvhwSGfTJktKg"
+  }
+ },
+ {
+  "id": "8dcc9bdb30",
+  "url": "https://docusaurus.io/",
+  "name": "Docusaurus",
+  "folder": "Documentation",
+  "site": "docusaurus.io",
+  "image": "img/8dcc9bdb30.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T03:55:59+00:00",
+  "source": {
+   "final_url": "https://docusaurus.io/",
+   "title": "Build optimized websites quickly, focus on your content | Docusaurus",
+   "description": "An optimized site generator in React. Docusaurus helps you to move fast and write content. Build documentation websites, blogs, marketing pages, and more.",
+   "site_name": null,
+   "image": "https://docusaurus.io/img/docusaurus-social-card.jpg"
   }
  }
 ]

@@ -113,7 +113,7 @@
 </footer>
 <div class="scrim" id="scrim"><div class="sheet"><h2 id="folder-title"></h2><div class="panel"><div class="grid" id="folder-grid"></div></div></div></div>
 <script>
-const ORDER = ["Portfolios", "Studios", "Fonts", "Colors", "Textures", "Logos", "UI kits", "Mockups", "Inspiration", "Landing pages", "Companies", "Dev tools", "Articles", "Guides", "Notes", "Videos", "Events"];
+const ORDER = ["Portfolios", "Studios", "Fonts", "Colors", "Textures", "Logos", "UI kits", "Mockups", "Inspiration", "Landing pages", "Companies", "Dev tools", "Analytics", "Documentation", "Articles", "Guides", "Notes", "Videos", "Events"];
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 function linkTile(l, showFolder) {
   return `<a class="item link" href="${esc(l.url)}" target="_blank" rel="noopener" title="${esc(l.name)}\n${esc(l.url)}" data-url="${esc(l.url)}">

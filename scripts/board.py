@@ -42,6 +42,8 @@ DEFAULT_FOLDERS = [
     "Notes",
     "Inspiration",
     "Dev tools",
+    "Analytics",
+    "Documentation",
     "Other",
 ]
 
