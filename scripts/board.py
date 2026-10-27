@@ -34,6 +34,11 @@ DEFAULT_FOLDERS = [
     "Landing pages",
     "Guides",
     "Events",
+    "Articles",
+    "Videos",
+    "Notes",
+    "Inspiration",
+    "Dev tools",
     "Other",
 ]
 
@@ -46,7 +51,22 @@ KEYWORD_FOLDERS = [
     ("Guides", ["guide", "how to", "tutorial", "templates", "tips"]),
     ("Events", ["conference", "summit", "apply to speak", "tickets", "meetup"]),
     ("Landing pages", ["landing page"]),
+    ("Videos", ["youtube.com", "youtu.be", "tiktok.com", "vimeo.com"]),
+    ("Notes", ["notes.granola.ai"]),
+    ("Articles", ["medium.com", "/blog/", "substack.com"]),
 ]
+
+TRACKING_PARAMS = re.compile(
+    r"^(utm_.*|gclid|gbraid|wbraid|gad_source|gad_campaignid|fbclid|msclkid|mc_cid|mc_eid|igsh|shem|si|_hsenc|_hsmi|content|ref_src)$",
+    re.I,
+)
+SHORTENERS = {"share.google", "t.co", "bit.ly", "goo.gl", "tinyurl.com", "lnkd.in", "buff.ly", "ow.ly", "search.app"}
+OEMBED = {
+    "youtube.com": "https://www.youtube.com/oembed?format=json&url=",
+    "youtu.be": "https://www.youtube.com/oembed?format=json&url=",
+    "tiktok.com": "https://www.tiktok.com/oembed?url=",
+    "vimeo.com": "https://vimeo.com/api/oembed.json?url=",
+}
 
 
 def load_links():
@@ -64,7 +84,10 @@ def normalize(url):
     if not re.match(r"^https?://", url, re.I):
         url = "https://" + url
     parts = urllib.parse.urlsplit(url)
-    return urllib.parse.urlunsplit((parts.scheme.lower(), parts.netloc.lower(), parts.path or "/", parts.query, ""))
+    query = urllib.parse.urlencode(
+        [(k, v) for k, v in urllib.parse.parse_qsl(parts.query, keep_blank_values=True) if not TRACKING_PARAMS.match(k)]
+    )
+    return urllib.parse.urlunsplit((parts.scheme.lower(), parts.netloc.lower(), parts.path or "/", query, ""))
 
 
 def same_link(a, b):
@@ -95,12 +118,7 @@ def _meta(page, keys):
     return None
 
 
-def fetch_metadata(url):
-    """The page's own title, description and preview image, as fetched."""
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "en"})
-    with urllib.request.urlopen(req, timeout=25) as r:
-        final_url = r.url
-        page = r.read(1_500_000).decode("utf-8", "ignore")
+def _parse_page(page, final_url):
     title_tag = re.search(r"<title[^>]*>(.*?)</title>", page, re.I | re.S)
     image = _meta(page, ["og:image", "og:image:url", "twitter:image", "twitter:image:src"])
     if image:
@@ -113,6 +131,70 @@ def fetch_metadata(url):
         "site_name": _meta(page, ["og:site_name"]),
         "image": image,
     }
+
+
+def _oembed(url):
+    endpoint = next((e for d, e in OEMBED.items() if site_of(url) == d or site_of(url).endswith("." + d)), None)
+    if not endpoint:
+        return {}
+    try:
+        req = urllib.request.Request(endpoint + urllib.parse.quote(url, safe=""), headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            data = json.loads(r.read())
+    except Exception:
+        return {}
+    return {"title": data.get("title"), "author": data.get("author_name"), "image": data.get("thumbnail_url")}
+
+
+def _open_browser(p):
+    import subprocess
+    import sys
+
+    if os.environ.get("CI") and not os.environ.get("BROWSER_PATH"):
+        subprocess.run([sys.executable, "-m", "playwright", "install", "--with-deps", "chromium"], check=True)
+    launch = {"args": ["--no-sandbox"]}
+    if os.environ.get("BROWSER_PATH"):
+        launch["executable_path"] = os.environ["BROWSER_PATH"]
+    browser = p.chromium.launch(**launch)
+    return browser, browser.new_page(viewport={"width": 1200, "height": 900}, user_agent=UA, locale="en-US")
+
+
+def _browser_metadata(url):
+    """For pages that refuse plain requests or only fill in their details with scripts."""
+    from playwright.sync_api import sync_playwright
+
+    with sync_playwright() as p:
+        browser, page = _open_browser(p)
+        page.goto(url, wait_until="domcontentloaded", timeout=45000)
+        page.wait_for_timeout(4000)
+        meta = _parse_page(page.content(), page.url)
+        browser.close()
+    return meta
+
+
+def fetch_metadata(url):
+    """The page's own title, description and preview image, as fetched."""
+    meta = None
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "en"})
+        with urllib.request.urlopen(req, timeout=25) as r:
+            meta = _parse_page(r.read(1_500_000).decode("utf-8", "ignore"), r.url)
+    except Exception as e:
+        print(f"  plain fetch failed ({e}); opening it in a browser")
+    if meta is None or not (meta["image"] or meta["description"]):
+        try:
+            meta = _browser_metadata(url)
+        except Exception as e:
+            if meta is None:
+                raise
+            print(f"  browser fetch failed ({e})")
+    embed = _oembed(meta["final_url"])
+    if embed.get("title"):
+        meta["title"] = embed["title"]
+        meta["author"] = embed.get("author")
+    if embed.get("image"):
+        meta["image"] = embed["image"]
+    return meta
 
 
 def _square(img, anchor_top):
@@ -131,20 +213,10 @@ def _download_image(src):
 
 
 def screenshot(url):
-    import subprocess
-    import sys
-
     from playwright.sync_api import sync_playwright
 
-    if os.environ.get("CI") and not os.environ.get("BROWSER_PATH"):
-        subprocess.run([sys.executable, "-m", "playwright", "install", "--with-deps", "chromium"], check=True)
-
-    launch = {"args": ["--no-sandbox"]}
-    if os.environ.get("BROWSER_PATH"):
-        launch["executable_path"] = os.environ["BROWSER_PATH"]
     with sync_playwright() as p:
-        browser = p.chromium.launch(**launch)
-        page = browser.new_page(viewport={"width": 1200, "height": 900})
+        browser, page = _open_browser(p)
         page.goto(url, wait_until="domcontentloaded", timeout=45000)
         page.wait_for_timeout(5000)
         png = page.screenshot()
@@ -186,6 +258,8 @@ def classify(url, meta, folders, hint=None):
             f"Existing folders: {', '.join(folders)}.\n"
             "Prefer an existing folder. Create a new short plural folder name (1-2 words, sentence case) only if none fits.\n"
             "Portfolios = an individual's personal or portfolio site. Companies = a company or product homepage.\n"
+            "Articles = blog posts and essays. Videos = YouTube/TikTok/Vimeo. Notes = shared notes documents.\n"
+            "Inspiration = galleries of design references. Dev tools = developer libraries and frameworks.\n"
             "Also give a short display name (1-3 words, e.g. the person's name or the product's name).\n"
             + (f"The user wrote this alongside the link: {hint!r}. If it names a folder, use it.\n" if hint else "")
             + f"URL: {url}\nTitle: {meta.get('title')}\nDescription: {meta.get('description')}\n"
@@ -228,6 +302,11 @@ def add_link(url, folder=None, name=None, hint=None):
         save_links(links)
         return existing, False
     meta = fetch_metadata(url)
+    if site_of(url) in SHORTENERS:
+        url = normalize(meta["final_url"])
+        existing = next((l for l in links if same_link(l["url"], url)), None)
+        if existing:
+            return existing, False
     folders = list(dict.fromkeys(DEFAULT_FOLDERS + [l["folder"] for l in links]))
     if not (folder and name):
         auto_name, auto_folder = classify(url, meta, folders, hint)

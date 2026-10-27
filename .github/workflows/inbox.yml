@@ -38,9 +38,9 @@ jobs:
           git add -A
           if ! git diff --cached --quiet; then
             git commit -m "Update links"
-            git push
+            git pull --rebase --quiet && git push
           elif [ $(( $(date +%s) - $(git log -1 --format=%ct) )) -gt 4320000 ]; then
             # GitHub pauses scheduled runs after 60 quiet days; a commit every 50 keeps texting working.
             git commit --allow-empty -m "Keep the inbox running"
-            git push
+            git pull --rebase --quiet && git push
           fi

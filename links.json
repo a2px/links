@@ -338,5 +338,296 @@
    "site_name": "Figma Config",
    "image": "https://cdn.sanity.io/images/zzn8a256/config2027-staging/e5069961385126be82b1b2e1c40b647a024c0f60-1200x630.png?w=1200&q=70&fit=max&auto=format"
   }
+ },
+ {
+  "id": "03629c0b9e",
+  "url": "https://alexkyr.com/",
+  "name": "Alex Kyriakides",
+  "folder": "Portfolios",
+  "site": "alexkyr.com",
+  "image": "img/03629c0b9e.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:49:18+00:00",
+  "source": {
+   "final_url": "https://alexkyr.com/",
+   "title": "Alex Kyriakides - Web, UI & Brand Designer",
+   "description": "Web designer and developer for tech startups. Brand design, web design, and UI design, from identity and visuals to websites and product interfaces.",
+   "site_name": null,
+   "image": "https://alexkyr.com/images/paper/socialurluialexk.jpg"
+  }
+ },
+ {
+  "id": "90ecd69c61",
+  "url": "https://www.lochieaxon.com/",
+  "name": "Lochie Axon",
+  "folder": "Portfolios",
+  "site": "lochieaxon.com",
+  "image": "img/90ecd69c61.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:49:19+00:00",
+  "source": {
+   "final_url": "https://www.lochieaxon.com/",
+   "title": "Lochie Axon",
+   "description": "making the web fun again",
+   "site_name": "Lochie Axon",
+   "image": "https://lochieaxon.com/assets/images/ohai.jpg"
+  }
+ },
+ {
+  "id": "bfe4e18411",
+  "url": "https://meliketurgut.com/",
+  "name": "Melike Turgut",
+  "folder": "Portfolios",
+  "site": "meliketurgut.com",
+  "image": "img/bfe4e18411.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:49:22+00:00",
+  "source": {
+   "final_url": "https://meliketurgut.com/",
+   "title": "me · like | Melike Turgut",
+   "description": "A few things that made me, me. Melike Turgut’s collection of eight little worlds.",
+   "site_name": "Melike Turgut",
+   "image": "https://meliketurgut.com/assets/social-preview-v2.png"
+  }
+ },
+ {
+  "id": "6e80418a84",
+  "url": "https://huggingface.co/",
+  "name": "Hugging Face",
+  "folder": "Companies",
+  "site": "huggingface.co",
+  "image": "img/6e80418a84.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:49:22+00:00",
+  "source": {
+   "final_url": "https://huggingface.co/",
+   "title": "Hugging Face – The AI community building the future.",
+   "description": "We’re on a journey to advance and democratize artificial intelligence through open source and open science.",
+   "site_name": null,
+   "image": "https://huggingface.co/front/thumbnails/v2-2.png"
+  }
+ },
+ {
+  "id": "8d967c1845",
+  "url": "https://higgsfield.ai/",
+  "name": "Higgsfield",
+  "folder": "Companies",
+  "site": "higgsfield.ai",
+  "image": "img/8d967c1845.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:49:23+00:00",
+  "source": {
+   "final_url": "https://higgsfield.ai/",
+   "title": "Higgsfield AI — AI-native creative suite",
+   "description": "Create images, videos, and voice content with Higgsfield AI from text prompts or references. Edit and upscale media, automate creative workflows with its AI agent, and generate content on web and mobile.",
+   "site_name": "Higgsfield",
+   "image": "https://static.higgsfield.ai/public/thumbnail/default.jpg"
+  }
+ },
+ {
+  "id": "c4a40f0fb5",
+  "url": "https://loading.dev/",
+  "name": "loading.dev",
+  "folder": "Dev tools",
+  "site": "loading.dev",
+  "image": "img/c4a40f0fb5.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:49:24+00:00",
+  "source": {
+   "final_url": "https://loading.dev/",
+   "title": "loading.dev",
+   "description": "A lightweight library full of beautiful loading indicators for React.",
+   "site_name": "loading.dev",
+   "image": "https://ru2qm1zsj1gavqlm.public.blob.vercel-storage.com/loading-og-image.png"
+  }
+ },
+ {
+  "id": "0fedbeb12f",
+  "url": "https://astro.build/",
+  "name": "Astro",
+  "folder": "Dev tools",
+  "site": "astro.build",
+  "image": "img/0fedbeb12f.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:49:25+00:00",
+  "source": {
+   "final_url": "https://astro.build/",
+   "title": "Astro",
+   "description": "Astro builds fast content sites, powerful web applications, dynamic server APIs, and everything in-between.",
+   "site_name": "Astro",
+   "image": "https://astro.build/og/astro.jpg"
+  }
+ },
+ {
+  "id": "d706d4f158",
+  "url": "https://sunshengkai.medium.com/philosophy-of-wechat-by-allen-zhang-3d313b093b27",
+  "name": "Philosophy of WeChat",
+  "folder": "Articles",
+  "site": "sunshengkai.medium.com",
+  "image": "img/d706d4f158.webp",
+  "image_kind": "screenshot",
+  "added": "2026-10-27T01:49:45+00:00",
+  "source": {
+   "final_url": "https://sunshengkai.medium.com/philosophy-of-wechat-by-allen-zhang-3d313b093b27",
+   "title": "Just a moment...",
+   "description": null,
+   "site_name": null,
+   "image": null
+  }
+ },
+ {
+  "id": "60132bf798",
+  "url": "https://a16z.com/four-key-product-principles-from-wechats-creator/",
+  "name": "WeChat principles",
+  "folder": "Articles",
+  "site": "a16z.com",
+  "image": "img/60132bf798.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:49:46+00:00",
+  "source": {
+   "final_url": "https://a16z.com/four-key-product-principles-from-wechats-creator/",
+   "title": "Four Key Product Principles from WeChat’s Creator  | Andreessen Horowitz",
+   "description": "Throughout China, Allen Zhang is known as the “father of WeChat”. Zhang’s public persona has much the same cultural importance and weight as the American legacy of Steve Jobs. He is renowned in China’s tech scene as an artist and philosopher, as well as for his fierce mission against anything that degrades user experience. Product...",
+   "site_name": "Andreessen Horowitz",
+   "image": "https://d1lamhf6l6yk6d.cloudfront.net/uploads/2026/07/a16z-Yoast-LI.png"
+  }
+ },
+ {
+  "id": "246d0120ea",
+  "url": "https://www.figma.com/blog/figma-agent-and-design-systems/",
+  "name": "Figma Agent",
+  "folder": "Articles",
+  "site": "figma.com",
+  "image": "img/246d0120ea.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:49:48+00:00",
+  "source": {
+   "final_url": "https://www.figma.com/blog/figma-agent-and-design-systems/",
+   "title": "How to Lighten Design System Upkeep With the Figma Agent | Figma Blog",
+   "description": "Here, we share a few ways to put the agent to work.",
+   "site_name": "Figma",
+   "image": "https://cdn.sanity.io/images/599r6htc/regionalized/4628d622dd91516f5755c9431146749f0ca1db35-1632x918.png?w=1200&q=70&fit=max&auto=format"
+  }
+ },
+ {
+  "id": "3a2adf5093",
+  "url": "https://www.kalzumeus.com/2012/01/23/salary-negotiation/",
+  "name": "Salary negotiation",
+  "folder": "Articles",
+  "site": "kalzumeus.com",
+  "image": "img/3a2adf5093.webp",
+  "image_kind": "screenshot",
+  "added": "2026-10-27T01:49:58+00:00",
+  "source": {
+   "final_url": "https://www.kalzumeus.com/2012/01/23/salary-negotiation/?shem=aimgspe,",
+   "title": "Salary Negotiation: Make More Money, Be More Valued\n      \n         | \n        Kalzumeus Software",
+   "description": "Salary negotiation advice, mostly for engineers. Running total of raises negotiated due to this essay: $15M+.",
+   "site_name": null,
+   "image": null
+  }
+ },
+ {
+  "id": "5d2939cedb",
+  "url": "https://notes.granola.ai/d/881eb346-e505-4b25-9784-9aa3d45e7b2d",
+  "name": "Figma as source of truth",
+  "folder": "Notes",
+  "site": "notes.granola.ai",
+  "image": "img/5d2939cedb.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:50:00+00:00",
+  "source": {
+   "final_url": "https://notes.granola.ai/d/881eb346-e505-4b25-9784-9aa3d45e7b2d",
+   "title": "Figma as the source of truth",
+   "description": "Figma as Source of Truth Figma should be the definitive source of truth, not the codebase Designers should work in the tools where they do their best ...",
+   "site_name": "Granola",
+   "image": "https://notes.granola.ai/api/og?date=Wed%2C+October+7%2C+2026&title=Figma+as+the+source+of+truth&attendees=Narayan&avatars=%5B%22https%3A%2F%2Fd2y2qtsuzmwn83.cloudfront.net%2Ff153d73dd961fd0320636fe522ecab68%3Fv%3D3%22%5D"
+  }
+ },
+ {
+  "id": "e4af7192f4",
+  "url": "https://notes.granola.ai/t/16d585fa-f7d8-49ef-8aae-c8af4099a57d",
+  "name": "Designing with AI",
+  "folder": "Notes",
+  "site": "notes.granola.ai",
+  "image": "img/e4af7192f4.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:50:02+00:00",
+  "source": {
+   "final_url": "https://notes.granola.ai/d/8ce0af0a-5295-4411-b39a-21091d209df6?utm_source=granola-app&utm_medium=copy-link&utm_campaign=document-share&utm_content=share-popover",
+   "title": "Meta designer ai and design talk",
+   "description": "Three Loops for Designing with AI Framework framed as “three things a good manager would do” (slide: “My three loops”): Loop 1: Context loop (onboardi...",
+   "site_name": "Granola",
+   "image": "https://notes.granola.ai/api/og?date=Sat%2C+October+10%2C+2026&title=meta+designer+ai+and+design+talk&attendees=Ashley&avatars=%5B%5D"
+  }
+ },
+ {
+  "id": "026c06c554",
+  "url": "https://youtu.be/4-l_s0TiddE",
+  "name": "How I Design at Granola",
+  "folder": "Videos",
+  "site": "youtu.be",
+  "image": "img/026c06c554.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:50:04+00:00",
+  "source": {
+   "final_url": "https://www.youtube.com/watch?v=4-l_s0TiddE&feature=youtu.be",
+   "title": "How I Design at Granola",
+   "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+   "site_name": null,
+   "image": "https://i.ytimg.com/vi/4-l_s0TiddE/hqdefault.jpg",
+   "author": "Sneak Peek"
+  }
+ },
+ {
+  "id": "ffa66bb1fb",
+  "url": "https://www.tiktok.com/@profwhuang?lang=en",
+  "name": "Prof. Huang",
+  "folder": "Videos",
+  "site": "tiktok.com",
+  "image": "img/ffa66bb1fb.webp",
+  "image_kind": "screenshot",
+  "added": "2026-10-27T01:50:26+00:00",
+  "source": {
+   "final_url": "https://www.tiktok.com/@profwhuang?lang=en",
+   "title": "Prof. Huang's Creator Profile",
+   "description": null,
+   "site_name": null,
+   "image": null,
+   "author": "Prof. Huang"
+  }
+ },
+ {
+  "id": "bf49f8c2d6",
+  "url": "https://refero.design/search?order=trending",
+  "name": "Refero",
+  "folder": "Inspiration",
+  "site": "refero.design",
+  "image": "img/bf49f8c2d6.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T01:50:27+00:00",
+  "source": {
+   "final_url": "https://refero.design/search?order=trending",
+   "title": "Refero — UI/UX Design Inspiration for Your Next Project",
+   "description": "The largest collection of UI/UX references and design inspiration for web and iOS. Explore tens of thousands of screenshots with advanced search capabilities",
+   "site_name": "Refero — UI/UX Design Inspiration for Your Next Project",
+   "image": "https://refero.design/open-graph-5-1200x630.png"
+  }
+ },
+ {
+  "id": "f435480dd9",
+  "url": "https://www.tiat.place/",
+  "name": "tiat",
+  "folder": "Inspiration",
+  "site": "tiat.place",
+  "image": "img/f435480dd9.webp",
+  "image_kind": "screenshot",
+  "added": "2026-10-27T01:50:52+00:00",
+  "source": {
+   "final_url": "https://www.tiat.place/",
+   "title": "the intersection of art & technology",
+   "description": null,
+   "site_name": null,
+   "image": null
+  }
  }
 ]
