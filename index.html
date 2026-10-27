@@ -23,7 +23,23 @@
   * { box-sizing: border-box; }
   html, body { margin: 0; background: #fff; color: var(--ink);
     font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
-  main { max-width: 1100px; margin: 0 auto; padding: 72px 48px 96px; }
+  body { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+  main { width: 100%; max-width: 1100px; margin: 0 auto; padding: 72px 48px 64px; flex: 1; }
+
+  /* Submit a link */
+  .submit { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 48px 40px; }
+  .submit form { background: #f4f4f6; border-radius: 20px; padding: 18px 18px 18px 22px;
+    display: flex; align-items: center; gap: 14px; max-width: 560px; }
+  .submit label { font-size: 13px; font-weight: 600; white-space: nowrap; }
+  .submit input#submit-url { flex: 1; min-width: 0; border: 0; background: #fff; border-radius: 12px;
+    padding: 10px 12px; font: inherit; font-size: 14px; color: var(--ink); outline: none;
+    box-shadow: 0 0 0 0.5px rgba(0,0,0,.10); }
+  .submit input#submit-url:focus { box-shadow: 0 0 0 2px rgba(0,0,0,.18); }
+  .submit button { border: 0; border-radius: 12px; padding: 10px 14px; font: inherit; font-size: 13px;
+    font-weight: 600; background: var(--ink); color: #fff; cursor: pointer; }
+  .submit button:disabled { opacity: .5; cursor: default; }
+  .submit .note { font-size: 12.5px; color: var(--muted); margin: 10px 4px 0; min-height: 1em; }
+  .submit .trap { position: absolute; left: -9999px; }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, var(--tile)); gap: var(--gap-y) var(--gap-x); justify-content: start; }
   .item { display: flex; flex-direction: column; align-items: center; gap: 9px; width: var(--tile);
     text-decoration: none; color: inherit; cursor: pointer; background: none; border: 0; padding: 0; font: inherit; }
@@ -51,7 +67,10 @@
 
   @media (max-width: 600px) {
     :root { --tile: 64px; --radius: 16px; --gap-x: 0px; --gap-y: 22px; }
-    main { padding: 40px 18px 64px; }
+    main { padding: 40px 18px 48px; }
+    .submit { padding: 0 14px calc(20px + env(safe-area-inset-bottom)); }
+    .submit form { flex-wrap: wrap; gap: 10px; padding: 16px; }
+    .submit label { width: 100%; }
     .grid { grid-template-columns: repeat(4, 1fr); justify-items: center; }
     .label { font-size: 11px; max-width: 76px; }
     .folder .icon { padding: 6px; gap: 4px; }
@@ -64,6 +83,15 @@
 </head>
 <body>
 <main><div class="grid" id="desk"></div></main>
+<footer class="submit">
+  <form id="submit-form" autocomplete="off">
+    <label for="submit-url">Submit a link</label>
+    <input type="text" id="submit-url" name="url" placeholder="Paste a link" required inputmode="url" autocapitalize="off" spellcheck="false" maxlength="500">
+    <input type="text" class="trap" name="website" tabindex="-1" aria-hidden="true">
+    <button type="submit" id="submit-button">Submit</button>
+  </form>
+  <p class="note" id="submit-note"></p>
+</footer>
 <div class="scrim" id="scrim"><div class="sheet"><h2 id="folder-title"></h2><div class="panel"><div class="grid" id="folder-grid"></div></div></div></div>
 <script>
 const ORDER = ["Portfolios", "Fonts", "Colors", "Textures", "Logos", "UI kits", "Inspiration", "Landing pages", "Companies", "Dev tools", "Articles", "Guides", "Notes", "Videos", "Events"];
@@ -88,6 +116,25 @@ fetch("links.json", {cache: "no-cache"}).then(r => r.json()).then(links => {
     document.getElementById("scrim").classList.add("open");
   });
 });
+const SUBMIT_TOPIC = "a2px-links-4afb6004d648";
+const form = document.getElementById("submit-form"), note = document.getElementById("submit-note");
+form.onsubmit = async e => {
+  e.preventDefault();
+  const input = form.url, button = document.getElementById("submit-button");
+  if (form.website.value) return;
+  let url = input.value.trim();
+  if (!/^https?:\/\//i.test(url)) url = "https://" + url;
+  try { if (!new URL(url).hostname.includes(".")) throw 0; } catch { note.textContent = "That doesn't look like a link. Check it and try again."; return; }
+  button.disabled = true; note.textContent = "Submitting...";
+  try {
+    const r = await fetch("https://ntfy.sh/" + SUBMIT_TOPIC, { method: "POST", body: url });
+    if (!r.ok) throw new Error(r.status);
+    input.value = "";
+    note.textContent = "Submitted. It shows up here once it's approved.";
+  } catch {
+    note.textContent = "Couldn't submit right now. Try again in a minute.";
+  } finally { button.disabled = false; }
+};
 const scrim = document.getElementById("scrim");
 scrim.onclick = e => { if (e.target === scrim || e.target.classList.contains("sheet")) scrim.classList.remove("open"); };
 document.addEventListener("keydown", e => { if (e.key === "Escape") scrim.classList.remove("open"); });

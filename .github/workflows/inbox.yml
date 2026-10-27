@@ -29,6 +29,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_OWNER_ID: ${{ secrets.TELEGRAM_OWNER_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NTFY_TOPIC: a2px-links-4afb6004d648
           PAGE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
         run: python scripts/telegram_inbox.py
       - name: Save changes
