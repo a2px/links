@@ -1224,5 +1224,23 @@
    "site_name": "ls.graphics",
    "image": "https://ls-graphics-directus-direct.b-cdn.net/assets/922a8882-1999-4a16-8d2d-a3983a929e23"
   }
+ },
+ {
+  "id": "e8a96191d1",
+  "url": "https://youtube.com/watch?v=ypzNhwpmOD4",
+  "name": "How Stripe Built Their New Website",
+  "folder": "Videos",
+  "site": "youtube.com",
+  "image": "img/e8a96191d1.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T03:08:54+00:00",
+  "source": {
+   "final_url": "https://www.youtube.com/watch?v=ypzNhwpmOD4",
+   "title": "How Stripe Built Their New Website",
+   "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+   "site_name": null,
+   "image": "https://i.ytimg.com/vi/ypzNhwpmOD4/hqdefault.jpg",
+   "author": "Y Combinator"
+  }
  }
 ]
