@@ -1651,5 +1651,22 @@
    "site_name": null,
    "image": "https://labs.google/assets/playground/hero-loop-poster.webp"
   }
+ },
+ {
+  "id": "6d9cc8d9c5",
+  "url": "https://github.com/stackedlol/hover-webs",
+  "name": "Hover webs",
+  "folder": "Dev tools",
+  "site": "github.com",
+  "image": "img/6d9cc8d9c5.webp",
+  "image_kind": "preview",
+  "added": "2026-10-28T02:52:42+00:00",
+  "source": {
+   "final_url": "https://github.com/stackedlol/hover-webs",
+   "title": "GitHub - stackedlol/hover-webs",
+   "description": "Contribute to stackedlol/hover-webs development by creating an account on GitHub.",
+   "site_name": "GitHub",
+   "image": "https://opengraph.githubassets.com/438b7d3e1a5d9f122ccc2fc8981be1bd7d9ed1005345a1cddf2ca7bc45c30bf1/stackedlol/hover-webs"
+  }
  }
 ]
