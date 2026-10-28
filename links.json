@@ -1634,5 +1634,22 @@
    "site_name": "Spawn",
    "image": "https://www.spawn.co/og/og-home-2026-08.png"
   }
+ },
+ {
+  "id": "f056b3e264",
+  "url": "https://labs.google/playground",
+  "name": "Google Playground",
+  "folder": "Tools",
+  "site": "labs.google",
+  "image": "img/f056b3e264.webp",
+  "image_kind": "preview",
+  "added": "2026-10-28T01:52:14+00:00",
+  "source": {
+   "final_url": "https://labs.google/playground",
+   "title": "Playground",
+   "description": "Create custom games in minutes.",
+   "site_name": null,
+   "image": "https://labs.google/assets/playground/hero-loop-poster.webp"
+  }
  }
 ]
