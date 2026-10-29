@@ -1668,5 +1668,22 @@
    "site_name": "GitHub",
    "image": "https://opengraph.githubassets.com/438b7d3e1a5d9f122ccc2fc8981be1bd7d9ed1005345a1cddf2ca7bc45c30bf1/stackedlol/hover-webs"
   }
+ },
+ {
+  "id": "25e86dfb93",
+  "url": "https://bencho.dev/",
+  "name": "Bencho",
+  "folder": "UI kits",
+  "site": "bencho.dev",
+  "image": "img/25e86dfb93.webp",
+  "image_kind": "preview",
+  "added": "2026-10-29T04:48:46+00:00",
+  "source": {
+   "final_url": "https://bencho.dev/",
+   "title": "Bencho — Interactive React UI Components & Micro-interactions",
+   "description": "A library of interactive UI blocks you can explore, tweak, and take straight into your projects. Everything is live, not mocked.",
+   "site_name": "Bencho",
+   "image": "https://bencho.dev/share-cover-ring.png"
+  }
  }
 ]
