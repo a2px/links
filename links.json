@@ -1702,5 +1702,22 @@
    "site_name": "Shopify Design",
    "image": null
   }
+ },
+ {
+  "id": "1fe7c9d9f6",
+  "url": "https://devin.ai/paid/devin/v2?hsa_acc=2306956870&hsa_cam=23521478533&hsa_grp=199099789371&hsa_ad=816461832958&hsa_src=g&hsa_tgt=kwd-2427683625960&hsa_kw=devin+cognition&hsa_mt=e&hsa_net=adwords&hsa_ver=3",
+  "name": "Devin",
+  "folder": "Dev tools",
+  "site": "devin.ai",
+  "image": "img/1fe7c9d9f6.webp",
+  "image_kind": "preview",
+  "added": "2026-10-30T21:03:26+00:00",
+  "source": {
+   "final_url": "https://devin.ai/paid/devin/v2?hsa_acc=2306956870&hsa_cam=23521478533&hsa_grp=199099789371&hsa_ad=816461832958&hsa_src=g&hsa_tgt=kwd-2427683625960&hsa_kw=devin+cognition&hsa_mt=e&hsa_net=adwords&hsa_ver=3",
+   "title": "Devin is the AI software engineer",
+   "description": "Devin plans, delegates, reviews, and ships software from one surface.",
+   "site_name": null,
+   "image": "https://devin.ai/assets/images/devin-og-noise.jpg"
+  }
  }
 ]
