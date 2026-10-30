@@ -1685,5 +1685,22 @@
    "site_name": "Bencho",
    "image": "https://bencho.dev/share-cover-ring.png"
   }
+ },
+ {
+  "id": "62a4a3940b",
+  "url": "https://shopify.design/",
+  "name": "Shopify",
+  "folder": "Studios",
+  "site": "shopify.design",
+  "image": "img/62a4a3940b.webp",
+  "image_kind": "screenshot",
+  "added": "2026-10-30T21:03:13+00:00",
+  "source": {
+   "final_url": "https://shopify.design/",
+   "title": "Shopify Design",
+   "description": "The Shopify Design team — Designing the future of agentic commerce. Experiments, ideas, and the people behind the craft.",
+   "site_name": "Shopify Design",
+   "image": null
+  }
  }
 ]
