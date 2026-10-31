@@ -1736,5 +1736,22 @@
    "site_name": null,
    "image": null
   }
+ },
+ {
+  "id": "63e861cd17",
+  "url": "https://screensdesign.com/",
+  "name": "ScreensDesign",
+  "folder": "Inspiration",
+  "site": "screensdesign.com",
+  "image": "img/63e861cd17.webp",
+  "image_kind": "preview",
+  "added": "2026-10-31T04:06:06+00:00",
+  "source": {
+   "final_url": "https://screensdesign.com/",
+   "title": "ScreensDesign: App Design Library & AI Screen Generator",
+   "description": "Research real iOS app screens, onboarding flows, paywalls, and revenue-backed patterns, then generate app screens from proven mobile design examples.",
+   "site_name": "ScreensDesign",
+   "image": "https://screensdesign.com/img/sd_preview_v3.jpg?v=3"
+  }
  }
 ]
