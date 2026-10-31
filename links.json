@@ -1719,5 +1719,22 @@
    "site_name": null,
    "image": "https://devin.ai/assets/images/devin-og-noise.jpg"
   }
+ },
+ {
+  "id": "45993287f9",
+  "url": "https://supahero.io/hero/modify",
+  "name": "Modyfi",
+  "folder": "Tools",
+  "site": "supahero.io",
+  "image": "img/45993287f9.webp",
+  "image_kind": "screenshot",
+  "added": "2026-10-31T04:05:26+00:00",
+  "source": {
+   "final_url": "https://supahero.io/hero/modify",
+   "title": "Modify Hero Section - Supahero",
+   "description": "Modyfi is the design platform built for multidisciplinary designers. Design, generate, animate, and more — without switching between apps.",
+   "site_name": null,
+   "image": null
+  }
  }
 ]
