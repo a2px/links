@@ -1770,5 +1770,22 @@
    "site_name": null,
    "image": "https://mui.com/static/social-previews/home-preview.jpg"
   }
+ },
+ {
+  "id": "c56d157fa0",
+  "url": "https://aligncanvas.com/",
+  "name": "AlignCanvas",
+  "folder": "Guides",
+  "site": "aligncanvas.com",
+  "image": "img/c56d157fa0.webp",
+  "image_kind": "preview",
+  "added": "2026-11-03T21:41:57+00:00",
+  "source": {
+   "final_url": "https://aligncanvas.com/",
+   "title": "AlignCanvas — motion templates for your images",
+   "description": "100+ animated templates with 3D, liquid glass and blur. Drop in your images and export MP4, WebM, GIF or PNG, all in the browser.",
+   "site_name": "AlignCanvas",
+   "image": "https://aligncanvas.com/og.jpg"
+  }
  }
 ]
