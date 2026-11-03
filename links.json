@@ -1753,5 +1753,22 @@
    "site_name": "ScreensDesign",
    "image": "https://screensdesign.com/img/sd_preview_v3.jpg?v=3"
   }
+ },
+ {
+  "id": "fe5d57190b",
+  "url": "https://mui.com/",
+  "name": "MUI: The React component library you alw",
+  "folder": "Accessibility",
+  "site": "mui.com",
+  "image": "img/fe5d57190b.webp",
+  "image_kind": "preview",
+  "added": "2026-11-03T07:57:56+00:00",
+  "source": {
+   "final_url": "https://mui.com/",
+   "title": "MUI: The React component library you always wanted",
+   "description": "MUI provides a simple, customizable, and accessible library of React components. Follow your own design system, or start with Material Design.",
+   "site_name": null,
+   "image": "https://mui.com/static/social-previews/home-preview.jpg"
+  }
  }
 ]
