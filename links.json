@@ -1787,5 +1787,22 @@
    "site_name": "AlignCanvas",
    "image": "https://aligncanvas.com/og.jpg"
   }
+ },
+ {
+  "id": "8347b01dee",
+  "url": "https://mobbin.com/",
+  "name": "Mobbin",
+  "folder": "Tools",
+  "site": "mobbin.com",
+  "image": "img/8347b01dee.webp",
+  "image_kind": "preview",
+  "added": "2026-11-05T17:30:00+00:00",
+  "source": {
+   "final_url": "https://mobbin.com/",
+   "title": "Mobbin — UI & UX design inspiration for mobile & web apps",
+   "description": "Save hours of UI & UX research with our library of over 600,000 fully searchable mobile & web app screenshots.",
+   "site_name": "Mobbin",
+   "image": "https://cdn.sanity.io/images/7b5292cr/production/ad36b255f55774117dd68cfba7cfc447be19f5b5-1200x630.png?w=1200&h=630"
+  }
  }
 ]
