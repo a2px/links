@@ -42,11 +42,38 @@ def api(method, **params):
         return json.loads(r.read())["result"]
 
 
-def reply(chat_id, text):
+def reply(chat_id, text, markup=None):
     try:
-        api("sendMessage", chat_id=chat_id, text=text, disable_web_page_preview=True)
+        extra = {"reply_markup": markup} if markup else {}
+        api("sendMessage", chat_id=chat_id, text=text, disable_web_page_preview=True, **extra)
     except Exception as e:
         print(f"reply failed: {e}")
+
+
+def change_button(link_id):
+    """The button under a bot reply that opens the folder picker for that link."""
+    return {"inline_keyboard": [[{"text": "Change folder", "callback_data": f"mv:{link_id}"}]]}
+
+
+def board_folders():
+    """Folders on the board, in the board's own order."""
+    used = {l["folder"] for l in board.load_links()}
+    order = [f for f in board.DEFAULT_FOLDERS if f in used]
+    return order + sorted(used - set(order))
+
+
+def folder_picker(link_id, current):
+    buttons = [
+        {"text": ("* " if f == current else "") + f, "callback_data": f"to:{link_id}:{f}"[:64]}
+        for f in board_folders()
+    ]
+    rows = [buttons[i : i + 3] for i in range(0, len(buttons), 3)]
+    rows.append([{"text": "Cancel", "callback_data": f"keep:{link_id}"}])
+    return {"inline_keyboard": rows}
+
+
+def find_link(link_id):
+    return next((l for l in board.load_links() if l["id"] == link_id), None)
 
 
 def urls_in(message):
@@ -107,11 +134,11 @@ def handle(message):
             continue
         changed = True
         if created:
-            reply(chat_id, f"Added {rec['name']} to {rec['folder']}. {PAGE_URL}".strip())
+            reply(chat_id, f"Added {rec['name']} to {rec['folder']}. {PAGE_URL}".strip(), change_button(rec["id"]))
         elif folder:
-            reply(chat_id, f"Moved {rec['name']} to {rec['folder']}.")
+            reply(chat_id, f"Moved {rec['name']} to {rec['folder']}.", change_button(rec["id"]))
         else:
-            reply(chat_id, f"{rec['name']} is already in {rec['folder']}.")
+            reply(chat_id, f"{rec['name']} is already in {rec['folder']}.", change_button(rec["id"]))
     return changed
 
 
@@ -153,31 +180,47 @@ def forward_suggestions(state):
 
 
 def handle_button(query, state):
+    """Add / Skip on a visitor suggestion, and the Change folder picker."""
     pending = state.setdefault("pending", {})
     if str(query["from"]["id"]) != OWNER:
         return False
-    action, _, pid = (query.get("data") or "").partition(":")
+    action, _, rest = (query.get("data") or "").partition(":")
     try:
         api("answerCallbackQuery", callback_query_id=query["id"], text="Adding..." if action == "add" else "")
     except Exception as e:  # Telegram refuses answers to taps older than a few seconds
         print(f"button answer failed: {e}")
-    url = pending.pop(pid, None)
     msg = query.get("message") or {}
-    done = "That suggestion was already handled."
-    changed = False
-    if url and action == "add":
-        try:
-            rec, created = board.add_link(url)
-            done = f"Added {rec['name']} to {rec['folder']}." if created else f"{rec['name']} is already in {rec['folder']}."
-            changed = created
-        except Exception as e:
-            print(f"could not add {url}: {e}")
-            done = f"Couldn't open {url}, so it wasn't added."
-    elif url:
-        done = f"Skipped {url}"
+    text, markup, changed = None, None, False
+
+    if action in ("mv", "to", "keep"):
+        link_id, _, folder = rest.partition(":")
+        rec = find_link(link_id)
+        if not rec:
+            text = "That link isn't on the board any more."
+        elif action == "mv":
+            text, markup = f"Move {rec['name']} to which folder?", folder_picker(link_id, rec["folder"])
+        elif action == "keep" or folder == rec["folder"] or folder not in board_folders():
+            text, markup = f"{rec['name']} stays in {rec['folder']}.", change_button(link_id)
+        else:
+            rec, _ = board.add_link(rec["url"], folder=folder)
+            text, markup, changed = f"Moved {rec['name']} to {rec['folder']}.", change_button(link_id), True
+    else:
+        url = pending.pop(rest, None)
+        text = "That suggestion was already handled."
+        if url and action == "add":
+            try:
+                rec, created = board.add_link(url)
+                text = f"Added {rec['name']} to {rec['folder']}." if created else f"{rec['name']} is already in {rec['folder']}."
+                markup, changed = change_button(rec["id"]), created
+            except Exception as e:
+                print(f"could not add {url}: {e}")
+                text = f"Couldn't open {url}, so it wasn't added."
+        elif url:
+            text = f"Skipped {url}"
     try:
         if msg:
-            api("editMessageText", chat_id=msg["chat"]["id"], message_id=msg["message_id"], text=done, disable_web_page_preview=True)
+            extra = {"reply_markup": markup} if markup else {}
+            api("editMessageText", chat_id=msg["chat"]["id"], message_id=msg["message_id"], text=text, disable_web_page_preview=True, **extra)
     except Exception as e:
         print(f"button reply failed: {e}")
     return changed
