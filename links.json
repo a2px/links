@@ -1804,5 +1804,124 @@
    "site_name": "Mobbin",
    "image": "https://cdn.sanity.io/images/7b5292cr/production/ad36b255f55774117dd68cfba7cfc447be19f5b5-1200x630.png?w=1200&h=630"
   }
+ },
+ {
+  "id": "e47c6e4e01",
+  "url": "https://libraries.dev/",
+  "name": "Libraries.dev: Libraries and models for ",
+  "folder": "Tools",
+  "site": "libraries.dev",
+  "image": "img/e47c6e4e01.webp",
+  "image_kind": "preview",
+  "added": "2026-11-07T19:26:33+00:00",
+  "source": {
+   "final_url": "https://libraries.dev/",
+   "title": "Libraries.dev: Libraries and models for next-gen UI",
+   "description": "UI effect libraries and on-device ML models, ready to use with your agents: animated borders, thinking indicators, voice visualizers, liquid metal, magnet tracking and more, for React, SwiftUI and React Native.",
+   "site_name": "Libraries.dev",
+   "image": "https://libraries.dev/assets/og-image.jpg?v=2"
+  }
+ },
+ {
+  "id": "3f1afef22d",
+  "url": "https://pro.beui.dev/",
+  "name": "beUI Pro",
+  "folder": "Guides",
+  "site": "pro.beui.dev",
+  "image": "img/3f1afef22d.webp",
+  "image_kind": "preview",
+  "added": "2026-11-07T19:26:39+00:00",
+  "source": {
+   "final_url": "https://pro.beui.dev/",
+   "title": "beUI Pro — Animated React Blocks & Next.js Templates",
+   "description": "Premium animated React blocks and complete Next.js landing-page templates, with live previews and editable source code for your product.",
+   "site_name": "beUI Pro",
+   "image": "https://pro.beui.dev/api/og"
+  }
+ },
+ {
+  "id": "7f7bb574e1",
+  "url": "https://uiarc.dev/",
+  "name": "Arc UI: the React UI library your AI age",
+  "folder": "Tools",
+  "site": "uiarc.dev",
+  "image": "img/7f7bb574e1.webp",
+  "image_kind": "preview",
+  "added": "2026-11-07T19:26:41+00:00",
+  "source": {
+   "final_url": "https://uiarc.dev/",
+   "title": "Arc UI: the React UI library your AI agents can build with",
+   "description": "Animated React components and blocks for shadcn and Next.js. Add them with the shadcn CLI, or let your AI agent build with them through the MCP server.",
+   "site_name": "Arc",
+   "image": "https://uiarc.dev/opengraph-image.png?e0ab1ba2db881709"
+  }
+ },
+ {
+  "id": "d16d848410",
+  "url": "https://boardui.com/",
+  "name": "BoardUI",
+  "folder": "Guides",
+  "site": "boardui.com",
+  "image": "img/d16d848410.webp",
+  "image_kind": "preview",
+  "added": "2026-11-07T19:26:43+00:00",
+  "source": {
+   "final_url": "https://www.boardui.com/",
+   "title": "BoardUI - React Design System for Dashboards",
+   "description": "Build agentic products and data-rich dashboards with 103 React components (19 chart cards), 10 Pro templates, Tailwind CSS, and editable source code.",
+   "site_name": null,
+   "image": "https://www.boardui.com/og_image.png"
+  }
+ },
+ {
+  "id": "8c769161ba",
+  "url": "https://affectui.com/",
+  "name": "affectUI · Agent-ready React UI for AI p",
+  "folder": "Tools",
+  "site": "affectui.com",
+  "image": "img/8c769161ba.webp",
+  "image_kind": "preview",
+  "added": "2026-11-07T19:26:45+00:00",
+  "source": {
+   "final_url": "https://www.affectui.com/",
+   "title": "affectUI · Agent-ready React UI for AI products",
+   "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
+   "site_name": "affectUI",
+   "image": "https://www.affectui.com/og.jpg?v=3"
+  }
+ },
+ {
+  "id": "eb22efa156",
+  "url": "https://kobra.systems/",
+  "name": "Kobra / React Input OTP component",
+  "folder": "Tools",
+  "site": "kobra.systems",
+  "image": "img/eb22efa156.webp",
+  "image_kind": "preview",
+  "added": "2026-11-07T19:26:49+00:00",
+  "source": {
+   "final_url": "https://kobra.systems/components/input-otp",
+   "title": "Kobra / React Input OTP component",
+   "description": "A segmented one-time-code input, built on input-otp. Built with React and Tailwind, in light and dark, with every state designed.",
+   "site_name": "kobra.systems",
+   "image": "https://kobra.systems/brand/og.png"
+  }
+ },
+ {
+  "id": "059d7e76ac",
+  "url": "https://ui.watermelon.sh/",
+  "name": "Watermelon UI: Free React Components, Bl",
+  "folder": "Tools",
+  "site": "ui.watermelon.sh",
+  "image": "img/059d7e76ac.webp",
+  "image_kind": "preview",
+  "added": "2026-11-07T19:26:50+00:00",
+  "source": {
+   "final_url": "https://ui.watermelon.sh/",
+   "title": "Watermelon UI: Free React Components, Blocks & Dashboards",
+   "description": "Free, open-source React components, animations, blocks, and dashboards for Tailwind CSS and shadcn/ui. Copy the code or install with the shadcn CLI.",
+   "site_name": "Watermelon UI",
+   "image": "https://ui.watermelon.sh/og/index.png"
+  }
  }
 ]
