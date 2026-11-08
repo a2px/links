@@ -1923,5 +1923,22 @@
    "site_name": "Watermelon UI",
    "image": "https://ui.watermelon.sh/og/index.png"
   }
+ },
+ {
+  "id": "9bb6be4f72",
+  "url": "https://bklit.com/",
+  "name": "Bklit",
+  "folder": "UI kits",
+  "site": "bklit.com",
+  "image": "img/9bb6be4f72.webp",
+  "image_kind": "screenshot",
+  "added": "2026-11-08T20:10:34+00:00",
+  "source": {
+   "final_url": "https://bklit.com/",
+   "title": "Bklit UI - Charts & Data Visualization Components",
+   "description": "Bklit UI is a component library built on top of shadcn/ui to help you build charts and data visualizations more easily.",
+   "site_name": "Bklit UI",
+   "image": "https://bklit.com/api/og/home?v=6"
+  }
  }
 ]
