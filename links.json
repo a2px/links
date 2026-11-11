@@ -1940,5 +1940,22 @@
    "site_name": "Bklit UI",
    "image": "https://bklit.com/api/og/home?v=6"
   }
+ },
+ {
+  "id": "ac0c4b9cb6",
+  "url": "https://www.meshy.ai/",
+  "name": "Meshy",
+  "folder": "Tools",
+  "site": "meshy.ai",
+  "image": "img/ac0c4b9cb6.webp",
+  "image_kind": "preview",
+  "added": "2026-11-11T15:46:48+00:00",
+  "source": {
+   "final_url": "https://www.meshy.ai/",
+   "title": "AI 3D Model Generator: Create 3D from Text & Images | Meshy",
+   "description": "Meshy's AI 3D model generator turns text and images into production-ready 3D models in 20-30 seconds. Export to FBX, OBJ, GLB, and STL formats. Try Meshy free.",
+   "site_name": "Meshy",
+   "image": "https://cdn.meshy.ai/landing-assets/og-images/website_og.webp"
+  }
  }
 ]
