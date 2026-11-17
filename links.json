@@ -1957,5 +1957,22 @@
    "site_name": "Meshy",
    "image": "https://cdn.meshy.ai/landing-assets/og-images/website_og.webp"
   }
+ },
+ {
+  "id": "5c04d70a76",
+  "url": "https://cur8d.club/",
+  "name": "cur8d",
+  "folder": "Inspiration",
+  "site": "cur8d.club",
+  "image": "img/5c04d70a76.webp",
+  "image_kind": "preview",
+  "added": "2026-11-17T17:32:56+00:00",
+  "source": {
+   "final_url": "https://cur8d.club/",
+   "title": "cur8d.club",
+   "description": "inspiring designers, builders, and studios.",
+   "site_name": "cur8d.club",
+   "image": "https://cur8d.club/site-assets/ogimage.jpg"
+  }
  }
 ]
