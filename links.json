@@ -1429,5 +1429,550 @@
    "site_name": null,
    "image": "http://bezier.method.ac/images/fbimage.png"
   }
+ },
+ {
+  "id": "16b57c1d11",
+  "url": "https://ablext.app/",
+  "name": "Able",
+  "folder": "Accessibility",
+  "site": "ablext.app",
+  "image": "img/16b57c1d11.webp",
+  "image_kind": "screenshot",
+  "added": "2026-10-27T04:07:09+00:00",
+  "source": {
+   "final_url": "https://ablext.app/",
+   "title": "Able — WCAG & ADA Accessibility Checker for Any Website",
+   "description": "One-click accessibility audits with plain-language results and actionable fix suggestions. Free Chrome extension for designers, developers, and compliance teams.",
+   "site_name": "Able",
+   "image": "https://ablext.app/og-image.png"
+  }
+ },
+ {
+  "id": "14fcb6ded0",
+  "url": "https://fonts.ninja/",
+  "name": "Fonts Ninja",
+  "folder": "Fonts",
+  "site": "fonts.ninja",
+  "image": "img/14fcb6ded0.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T05:06:48+00:00",
+  "source": {
+   "final_url": "https://fonts.ninja/",
+   "title": "Discover, buy and download awesome fonts - Fonts Ninja",
+   "description": "Fonts Ninja helps designers discover awesome fonts and create stunning designs. Explore thousands of fonts and download them for free or buy premium ones.",
+   "site_name": null,
+   "image": "http://fonts.ninja/images/social.png"
+  }
+ },
+ {
+  "id": "3f3b85d8fa",
+  "url": "https://html.to.design/home/",
+  "name": "HTML to Design",
+  "folder": "Tools",
+  "site": "html.to.design",
+  "image": "img/3f3b85d8fa.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T05:07:06+00:00",
+  "source": {
+   "final_url": "https://html.to.design/home/",
+   "title": "html.to.design — Convert any website into fully editable Figma designs",
+   "description": "html.to.design—Convert any website into fully editable Figma files",
+   "site_name": "html.to.design — Convert any website into fully editable Figma designs",
+   "image": "https://html.to.design/img/meta/h2d-banner.jpg"
+  }
+ },
+ {
+  "id": "9ccb48b218",
+  "url": "https://chromewebstore.google.com/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl?hl=en&pli=1",
+  "name": "GoFullPage",
+  "folder": "Tools",
+  "site": "chromewebstore.google.com",
+  "image": "img/9ccb48b218.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T05:07:31+00:00",
+  "source": {
+   "final_url": "https://chromewebstore.google.com/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl?hl=en&pli=1",
+   "title": "GoFullPage - Full Page Screen Capture - Chrome Web Store",
+   "description": "Capture a screenshot of your current page in entirety and reliably—without requesting any extra permissions!",
+   "site_name": null,
+   "image": "https://lh3.googleusercontent.com/xkq24Y-hSgJHCOs7hskeMNfZatMQYRmybkMY8gGrzHTYVJiQR_2un6xgg9cXY93ShVNU5LdC7n5fddtbQxeNIV0hma8=s128-rj-sc0x00ffffff"
+  }
+ },
+ {
+  "id": "e8e0e54570",
+  "url": "https://vizcom.com/product",
+  "name": "Vizcom",
+  "folder": "Tools",
+  "site": "vizcom.com",
+  "image": "img/e8e0e54570.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T05:51:18+00:00",
+  "source": {
+   "final_url": "https://vizcom.com/product",
+   "title": "Vizcom Features | AI Rendering, Collaboration & Design Tools",
+   "description": "One platform, endless possibilities. Discover AI rendering, team collaboration, and design tools built to accelerate your creative process.",
+   "site_name": null,
+   "image": "https://cdn.prod.website-files.com/68da69e18c8988d039a9f6fe/694b256896dd559dad1f8296_Generic_OpenGraph_1200x630.png"
+  }
+ },
+ {
+  "id": "c4393c56e0",
+  "url": "https://www.tonik.com/",
+  "name": "tonik",
+  "folder": "Studios",
+  "site": "tonik.com",
+  "image": "img/c4393c56e0.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T05:51:46+00:00",
+  "source": {
+   "final_url": "https://www.tonik.com/",
+   "title": "Design studio for visionaries | tonik",
+   "description": "Founder-first, 0→1 studio that defines, designs, and builds products and other digital wizardry.",
+   "site_name": null,
+   "image": "https://cdn.prod.website-files.com/66c4a4d95e549a87dd8ddee9/670eaa05755e2542656ca4aa_og_image.png"
+  }
+ },
+ {
+  "id": "8ba627abaa",
+  "url": "https://prototypes.fun/",
+  "name": "Proto",
+  "folder": "Tools",
+  "site": "prototypes.fun",
+  "image": "img/8ba627abaa.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T05:52:17+00:00",
+  "source": {
+   "final_url": "https://prototypes.fun/",
+   "title": "Proto",
+   "description": "Proto design partner experience.",
+   "site_name": "Proto",
+   "image": "https://prototypes.fun/opengraph-image-pwu6ef.jpg?opengraph-image.2u5yw35cmtw9v.jpg"
+  }
+ },
+ {
+  "id": "e3a7b94be9",
+  "url": "https://www.antler.co/portfolio",
+  "name": "Antler",
+  "folder": "Companies",
+  "site": "antler.co",
+  "image": "img/e3a7b94be9.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T05:52:32+00:00",
+  "source": {
+   "final_url": "https://www.antler.co/portfolio",
+   "title": "Meet Our Portfolio | Antler",
+   "description": "Spanning 6 different continents and 30+ industries, meet our impressive range of Antler-backed startups.",
+   "site_name": null,
+   "image": "https://cdn.prod.website-files.com/68c1084e137e63873a526f0f/6940a6b7bb9902875225ad67_Antler%20open%20graph.jpg"
+  }
+ },
+ {
+  "id": "94b8fb4484",
+  "url": "https://ui.aceternity.com/",
+  "name": "Aceternity",
+  "folder": "UI kits",
+  "site": "ui.aceternity.com",
+  "image": "img/94b8fb4484.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T05:52:59+00:00",
+  "source": {
+   "final_url": "https://ui.aceternity.com/",
+   "title": "Aceternity UI — React & Tailwind CSS Component Library",
+   "description": "Aceternity UI is a React component library with 200+ copy-paste components, blocks, and landing page templates built with Tailwind CSS and Motion.",
+   "site_name": "Aceternity UI",
+   "image": "https://ui.aceternity.com/banner.png"
+  }
+ },
+ {
+  "id": "23e9086753",
+  "url": "https://animos.app/",
+  "name": "Animos",
+  "folder": "Tools",
+  "site": "animos.app",
+  "image": "img/23e9086753.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T05:53:31+00:00",
+  "source": {
+   "final_url": "https://animos.app/",
+   "title": "animos — Motion templates for design showcases",
+   "description": "Showcase your designs in motion. 25 ready-made animation templates — drop in your work, tweak, and export an MP4, all in your browser.",
+   "site_name": "animos",
+   "image": "https://animos.app/og-image.png"
+  }
+ },
+ {
+  "id": "1b6fec754a",
+  "url": "https://designeer.xyz/",
+  "name": "Designeer",
+  "folder": "Portfolios",
+  "site": "designeer.xyz",
+  "image": "img/1b6fec754a.webp",
+  "image_kind": "name",
+  "added": "2026-10-27T20:52:02+00:00",
+  "source": {
+   "final_url": "https://designeer.xyz/",
+   "title": null,
+   "description": null,
+   "site_name": null,
+   "image": null,
+   "blocked": true
+  }
+ },
+ {
+  "id": "297a337ba4",
+  "url": "https://www.spawn.co/",
+  "name": "Spawn",
+  "folder": "Tools",
+  "site": "spawn.co",
+  "image": "img/297a337ba4.webp",
+  "image_kind": "preview",
+  "added": "2026-10-27T23:29:03+00:00",
+  "source": {
+   "final_url": "https://www.spawn.co/",
+   "title": "Spawn: Your Place to Make Games with Friends",
+   "description": "Spawn is your place to make games with friends. Describe anything and Savi, your AI game builder, makes it with you. Then play together instantly in your browser.",
+   "site_name": "Spawn",
+   "image": "https://www.spawn.co/og/og-home-2026-08.png"
+  }
+ },
+ {
+  "id": "f056b3e264",
+  "url": "https://labs.google/playground",
+  "name": "Google Playground",
+  "folder": "Tools",
+  "site": "labs.google",
+  "image": "img/f056b3e264.webp",
+  "image_kind": "preview",
+  "added": "2026-10-28T01:52:14+00:00",
+  "source": {
+   "final_url": "https://labs.google/playground",
+   "title": "Playground",
+   "description": "Create custom games in minutes.",
+   "site_name": null,
+   "image": "https://labs.google/assets/playground/hero-loop-poster.webp"
+  }
+ },
+ {
+  "id": "6d9cc8d9c5",
+  "url": "https://github.com/stackedlol/hover-webs",
+  "name": "Hover webs",
+  "folder": "Dev tools",
+  "site": "github.com",
+  "image": "img/6d9cc8d9c5.webp",
+  "image_kind": "preview",
+  "added": "2026-10-28T02:52:42+00:00",
+  "source": {
+   "final_url": "https://github.com/stackedlol/hover-webs",
+   "title": "GitHub - stackedlol/hover-webs",
+   "description": "Contribute to stackedlol/hover-webs development by creating an account on GitHub.",
+   "site_name": "GitHub",
+   "image": "https://opengraph.githubassets.com/438b7d3e1a5d9f122ccc2fc8981be1bd7d9ed1005345a1cddf2ca7bc45c30bf1/stackedlol/hover-webs"
+  }
+ },
+ {
+  "id": "25e86dfb93",
+  "url": "https://bencho.dev/",
+  "name": "Bencho",
+  "folder": "UI kits",
+  "site": "bencho.dev",
+  "image": "img/25e86dfb93.webp",
+  "image_kind": "preview",
+  "added": "2026-10-29T04:48:46+00:00",
+  "source": {
+   "final_url": "https://bencho.dev/",
+   "title": "Bencho — Interactive React UI Components & Micro-interactions",
+   "description": "A library of interactive UI blocks you can explore, tweak, and take straight into your projects. Everything is live, not mocked.",
+   "site_name": "Bencho",
+   "image": "https://bencho.dev/share-cover-ring.png"
+  }
+ },
+ {
+  "id": "62a4a3940b",
+  "url": "https://shopify.design/",
+  "name": "Shopify",
+  "folder": "Studios",
+  "site": "shopify.design",
+  "image": "img/62a4a3940b.webp",
+  "image_kind": "screenshot",
+  "added": "2026-10-30T21:03:13+00:00",
+  "source": {
+   "final_url": "https://shopify.design/",
+   "title": "Shopify Design",
+   "description": "The Shopify Design team — Designing the future of agentic commerce. Experiments, ideas, and the people behind the craft.",
+   "site_name": "Shopify Design",
+   "image": null
+  }
+ },
+ {
+  "id": "1fe7c9d9f6",
+  "url": "https://devin.ai/paid/devin/v2?hsa_acc=2306956870&hsa_cam=23521478533&hsa_grp=199099789371&hsa_ad=816461832958&hsa_src=g&hsa_tgt=kwd-2427683625960&hsa_kw=devin+cognition&hsa_mt=e&hsa_net=adwords&hsa_ver=3",
+  "name": "Devin",
+  "folder": "Dev tools",
+  "site": "devin.ai",
+  "image": "img/1fe7c9d9f6.webp",
+  "image_kind": "preview",
+  "added": "2026-10-30T21:03:26+00:00",
+  "source": {
+   "final_url": "https://devin.ai/paid/devin/v2?hsa_acc=2306956870&hsa_cam=23521478533&hsa_grp=199099789371&hsa_ad=816461832958&hsa_src=g&hsa_tgt=kwd-2427683625960&hsa_kw=devin+cognition&hsa_mt=e&hsa_net=adwords&hsa_ver=3",
+   "title": "Devin is the AI software engineer",
+   "description": "Devin plans, delegates, reviews, and ships software from one surface.",
+   "site_name": null,
+   "image": "https://devin.ai/assets/images/devin-og-noise.jpg"
+  }
+ },
+ {
+  "id": "45993287f9",
+  "url": "https://supahero.io/hero/modify",
+  "name": "Modyfi",
+  "folder": "Tools",
+  "site": "supahero.io",
+  "image": "img/45993287f9.webp",
+  "image_kind": "screenshot",
+  "added": "2026-10-31T04:05:26+00:00",
+  "source": {
+   "final_url": "https://supahero.io/hero/modify",
+   "title": "Modify Hero Section - Supahero",
+   "description": "Modyfi is the design platform built for multidisciplinary designers. Design, generate, animate, and more — without switching between apps.",
+   "site_name": null,
+   "image": null
+  }
+ },
+ {
+  "id": "63e861cd17",
+  "url": "https://screensdesign.com/",
+  "name": "ScreensDesign",
+  "folder": "Inspiration",
+  "site": "screensdesign.com",
+  "image": "img/63e861cd17.webp",
+  "image_kind": "preview",
+  "added": "2026-10-31T04:06:06+00:00",
+  "source": {
+   "final_url": "https://screensdesign.com/",
+   "title": "ScreensDesign: App Design Library & AI Screen Generator",
+   "description": "Research real iOS app screens, onboarding flows, paywalls, and revenue-backed patterns, then generate app screens from proven mobile design examples.",
+   "site_name": "ScreensDesign",
+   "image": "https://screensdesign.com/img/sd_preview_v3.jpg?v=3"
+  }
+ },
+ {
+  "id": "fe5d57190b",
+  "url": "https://mui.com/",
+  "name": "MUI: The React component library you alw",
+  "folder": "Accessibility",
+  "site": "mui.com",
+  "image": "img/fe5d57190b.webp",
+  "image_kind": "preview",
+  "added": "2026-11-03T07:57:56+00:00",
+  "source": {
+   "final_url": "https://mui.com/",
+   "title": "MUI: The React component library you always wanted",
+   "description": "MUI provides a simple, customizable, and accessible library of React components. Follow your own design system, or start with Material Design.",
+   "site_name": null,
+   "image": "https://mui.com/static/social-previews/home-preview.jpg"
+  }
+ },
+ {
+  "id": "c56d157fa0",
+  "url": "https://aligncanvas.com/",
+  "name": "AlignCanvas",
+  "folder": "Guides",
+  "site": "aligncanvas.com",
+  "image": "img/c56d157fa0.webp",
+  "image_kind": "preview",
+  "added": "2026-11-03T21:41:57+00:00",
+  "source": {
+   "final_url": "https://aligncanvas.com/",
+   "title": "AlignCanvas — motion templates for your images",
+   "description": "100+ animated templates with 3D, liquid glass and blur. Drop in your images and export MP4, WebM, GIF or PNG, all in the browser.",
+   "site_name": "AlignCanvas",
+   "image": "https://aligncanvas.com/og.jpg"
+  }
+ },
+ {
+  "id": "8347b01dee",
+  "url": "https://mobbin.com/",
+  "name": "Mobbin",
+  "folder": "Tools",
+  "site": "mobbin.com",
+  "image": "img/8347b01dee.webp",
+  "image_kind": "preview",
+  "added": "2026-11-05T17:30:00+00:00",
+  "source": {
+   "final_url": "https://mobbin.com/",
+   "title": "Mobbin — UI & UX design inspiration for mobile & web apps",
+   "description": "Save hours of UI & UX research with our library of over 600,000 fully searchable mobile & web app screenshots.",
+   "site_name": "Mobbin",
+   "image": "https://cdn.sanity.io/images/7b5292cr/production/ad36b255f55774117dd68cfba7cfc447be19f5b5-1200x630.png?w=1200&h=630"
+  }
+ },
+ {
+  "id": "e47c6e4e01",
+  "url": "https://libraries.dev/",
+  "name": "Libraries.dev: Libraries and models for ",
+  "folder": "Tools",
+  "site": "libraries.dev",
+  "image": "img/e47c6e4e01.webp",
+  "image_kind": "preview",
+  "added": "2026-11-07T19:26:33+00:00",
+  "source": {
+   "final_url": "https://libraries.dev/",
+   "title": "Libraries.dev: Libraries and models for next-gen UI",
+   "description": "UI effect libraries and on-device ML models, ready to use with your agents: animated borders, thinking indicators, voice visualizers, liquid metal, magnet tracking and more, for React, SwiftUI and React Native.",
+   "site_name": "Libraries.dev",
+   "image": "https://libraries.dev/assets/og-image.jpg?v=2"
+  }
+ },
+ {
+  "id": "3f1afef22d",
+  "url": "https://pro.beui.dev/",
+  "name": "beUI Pro",
+  "folder": "Guides",
+  "site": "pro.beui.dev",
+  "image": "img/3f1afef22d.webp",
+  "image_kind": "preview",
+  "added": "2026-11-07T19:26:39+00:00",
+  "source": {
+   "final_url": "https://pro.beui.dev/",
+   "title": "beUI Pro — Animated React Blocks & Next.js Templates",
+   "description": "Premium animated React blocks and complete Next.js landing-page templates, with live previews and editable source code for your product.",
+   "site_name": "beUI Pro",
+   "image": "https://pro.beui.dev/api/og"
+  }
+ },
+ {
+  "id": "7f7bb574e1",
+  "url": "https://uiarc.dev/",
+  "name": "Arc UI: the React UI library your AI age",
+  "folder": "Tools",
+  "site": "uiarc.dev",
+  "image": "img/7f7bb574e1.webp",
+  "image_kind": "preview",
+  "added": "2026-11-07T19:26:41+00:00",
+  "source": {
+   "final_url": "https://uiarc.dev/",
+   "title": "Arc UI: the React UI library your AI agents can build with",
+   "description": "Animated React components and blocks for shadcn and Next.js. Add them with the shadcn CLI, or let your AI agent build with them through the MCP server.",
+   "site_name": "Arc",
+   "image": "https://uiarc.dev/opengraph-image.png?e0ab1ba2db881709"
+  }
+ },
+ {
+  "id": "d16d848410",
+  "url": "https://boardui.com/",
+  "name": "BoardUI",
+  "folder": "Guides",
+  "site": "boardui.com",
+  "image": "img/d16d848410.webp",
+  "image_kind": "preview",
+  "added": "2026-11-07T19:26:43+00:00",
+  "source": {
+   "final_url": "https://www.boardui.com/",
+   "title": "BoardUI - React Design System for Dashboards",
+   "description": "Build agentic products and data-rich dashboards with 103 React components (19 chart cards), 10 Pro templates, Tailwind CSS, and editable source code.",
+   "site_name": null,
+   "image": "https://www.boardui.com/og_image.png"
+  }
+ },
+ {
+  "id": "8c769161ba",
+  "url": "https://affectui.com/",
+  "name": "affectUI · Agent-ready React UI for AI p",
+  "folder": "Tools",
+  "site": "affectui.com",
+  "image": "img/8c769161ba.webp",
+  "image_kind": "preview",
+  "added": "2026-11-07T19:26:45+00:00",
+  "source": {
+   "final_url": "https://www.affectui.com/",
+   "title": "affectUI · Agent-ready React UI for AI products",
+   "description": "Agent-ready React components, screens and blocks for AI products and SaaS. One file each, no dependencies – add them yourself or let Claude, Cursor or v0 do it.",
+   "site_name": "affectUI",
+   "image": "https://www.affectui.com/og.jpg?v=3"
+  }
+ },
+ {
+  "id": "eb22efa156",
+  "url": "https://kobra.systems/",
+  "name": "Kobra / React Input OTP component",
+  "folder": "Tools",
+  "site": "kobra.systems",
+  "image": "img/eb22efa156.webp",
+  "image_kind": "preview",
+  "added": "2026-11-07T19:26:49+00:00",
+  "source": {
+   "final_url": "https://kobra.systems/components/input-otp",
+   "title": "Kobra / React Input OTP component",
+   "description": "A segmented one-time-code input, built on input-otp. Built with React and Tailwind, in light and dark, with every state designed.",
+   "site_name": "kobra.systems",
+   "image": "https://kobra.systems/brand/og.png"
+  }
+ },
+ {
+  "id": "059d7e76ac",
+  "url": "https://ui.watermelon.sh/",
+  "name": "Watermelon UI: Free React Components, Bl",
+  "folder": "Tools",
+  "site": "ui.watermelon.sh",
+  "image": "img/059d7e76ac.webp",
+  "image_kind": "preview",
+  "added": "2026-11-07T19:26:50+00:00",
+  "source": {
+   "final_url": "https://ui.watermelon.sh/",
+   "title": "Watermelon UI: Free React Components, Blocks & Dashboards",
+   "description": "Free, open-source React components, animations, blocks, and dashboards for Tailwind CSS and shadcn/ui. Copy the code or install with the shadcn CLI.",
+   "site_name": "Watermelon UI",
+   "image": "https://ui.watermelon.sh/og/index.png"
+  }
+ },
+ {
+  "id": "9bb6be4f72",
+  "url": "https://bklit.com/",
+  "name": "Bklit",
+  "folder": "UI kits",
+  "site": "bklit.com",
+  "image": "img/9bb6be4f72.webp",
+  "image_kind": "screenshot",
+  "added": "2026-11-08T20:10:34+00:00",
+  "source": {
+   "final_url": "https://bklit.com/",
+   "title": "Bklit UI - Charts & Data Visualization Components",
+   "description": "Bklit UI is a component library built on top of shadcn/ui to help you build charts and data visualizations more easily.",
+   "site_name": "Bklit UI",
+   "image": "https://bklit.com/api/og/home?v=6"
+  }
+ },
+ {
+  "id": "ac0c4b9cb6",
+  "url": "https://www.meshy.ai/",
+  "name": "Meshy",
+  "folder": "New folder",
+  "site": "meshy.ai",
+  "image": "img/ac0c4b9cb6.webp",
+  "image_kind": "preview",
+  "added": "2026-11-11T15:46:48+00:00",
+  "source": {
+   "final_url": "https://www.meshy.ai/",
+   "title": "AI 3D Model Generator: Create 3D from Text & Images | Meshy",
+   "description": "Meshy's AI 3D model generator turns text and images into production-ready 3D models in 20-30 seconds. Export to FBX, OBJ, GLB, and STL formats. Try Meshy free.",
+   "site_name": "Meshy",
+   "image": "https://cdn.meshy.ai/landing-assets/og-images/website_og.webp"
+  }
+ },
+ {
+  "id": "5c04d70a76",
+  "url": "https://cur8d.club/",
+  "name": "cur8d",
+  "folder": "Inspiration",
+  "site": "cur8d.club",
+  "image": "img/5c04d70a76.webp",
+  "image_kind": "preview",
+  "added": "2026-11-17T17:32:56+00:00",
+  "source": {
+   "final_url": "https://cur8d.club/",
+   "title": "cur8d.club",
+   "description": "inspiring designers, builders, and studios.",
+   "site_name": "cur8d.club",
+   "image": "https://cur8d.club/site-assets/ogimage.jpg"
+  }
  }
 ]
