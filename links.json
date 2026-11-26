@@ -1991,5 +1991,39 @@
    "site_name": null,
    "image": null
   }
+ },
+ {
+  "id": "6c335dcc4c",
+  "url": "https://www.swishy.ai/graphics",
+  "name": "Graphics Animation Templates",
+  "folder": "Guides",
+  "site": "swishy.ai",
+  "image": "img/6c335dcc4c.webp",
+  "image_kind": "preview",
+  "added": "2026-11-26T10:56:59+00:00",
+  "source": {
+   "final_url": "https://www.swishy.ai/graphics",
+   "title": "Graphics Animation Templates | Swishy AI",
+   "description": "Animated graphics and visual elements that bring your content to life.",
+   "site_name": null,
+   "image": "https://www.swishy.ai/og-image.png"
+  }
+ },
+ {
+  "id": "8691056f99",
+  "url": "https://momentum.uninspired.app/",
+  "name": "Motion Graphics in Your Browser for Desi",
+  "folder": "Portfolios",
+  "site": "momentum.uninspired.app",
+  "image": "img/8691056f99.webp",
+  "image_kind": "preview",
+  "added": "2026-11-26T10:57:00+00:00",
+  "source": {
+   "final_url": "https://momentum.uninspired.app/",
+   "title": "Motion Graphics in Your Browser for Designers | Momentum",
+   "description": "Create motion graphics for social posts and portfolios in minutes, right in your browser. Pick a preset, drop in visuals, tweak a few controls, export MP4.",
+   "site_name": "Momentum",
+   "image": "https://momentum.uninspired.app/og.webp"
+  }
  }
 ]
